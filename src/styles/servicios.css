@@ -1,0 +1,184 @@
+.servicios-1 {
+    padding-top: 100px;
+    background-color: #F6F5F5;
+}
+
+.servicios{
+    background-color: #F6F5F5;
+}
+
+.services-card-title {
+    text-align: left !important;
+    font-family: 'Montserrat',serif;
+    font-weight: 650;
+    font-size: 20px;
+}
+
+.v-link{
+    padding-top: 10px;
+    font-family: 'Montserrat',serif;
+    font-weight: 650;
+    font-size: 20px;
+    color: #1C932B !important;
+}
+
+.r-link{
+    padding-top: 10px;
+    font-family: 'Montserrat',serif;
+    font-weight: 650;
+    font-size: 20px;
+    color: #D90607 !important;
+}
+
+.a-link{
+    padding-top: 10px;
+    font-family: 'Montserrat',serif;
+    font-weight: 650;
+    font-size: 20px;
+    color: #020167 !important;
+}
+
+.a-link-last{
+    padding-top: 34px;
+    font-family: 'Montserrat',serif;
+    font-weight: 650;
+    font-size: 20px;
+    color: #020167 !important;
+}
+
+.a-izquierda h4 {
+    font-family: 'Montserrat',serif;
+    font-weight: 650;
+    font-size: 20px;
+}
+
+.c-parrafo {
+    text-align: left;
+    font-family: 'Montserrat',serif;
+    font-size: medium !important;
+    color: #616161;
+}
+
+.our-services-parrafo2 {
+    padding-top: 30px;
+    text-align: center;
+    font-family: 'Montserrat',serif;
+    font-size: large;
+    color: #616161;
+}
+
+.c-dots{
+    text-align: left;
+    font-family: 'Montserrat',serif;
+    font-size: medium;
+    color: #616161;
+}
+
+.our-services-title2 {
+    text-align: center;
+    font-family: 'Montserrat',serif;
+    font-weight: 650;
+    font-size: 50px;
+    padding-bottom: 40px;
+}
+
+.services-1{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: -webkit-linear-gradient(left, #020167, #1c349c);
+}
+
+.services-1 h1{
+    text-align: center;
+    font-family: 'Montserrat',serif;
+    font-weight: 650;
+    font-size: 25px;
+    color: white
+}
+
+
+.tecnologias-title {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center !important;
+    font-family: 'Montserrat',serif;
+    font-weight: 650;
+    font-size: 50px;
+}
+
+.tecnologias{
+    margin-bottom: 100px;
+}
+
+.s-contact {
+    border: 0;
+    margin-bottom: 100px !important;
+    background: -webkit-linear-gradient(left, #1C932B, #6BB646);
+}
+
+.s-contact-title {
+    margin-top: 10px;
+    text-align: left;
+    font-family: 'Montserrat',serif;
+    font-weight: 650;
+    font-size: 25px;
+    color: white
+}
+
+.s-contact-button {
+    display:block;
+    padding-top: 10px !important;
+    padding-left: 10px !important;
+    padding-bottom: 10px !important;
+    padding-right: 10px !important;
+    text-align: center !important;
+    font-family: 'Montserrat',serif !important;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    color: white !important;
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.s-contact-button {
+    transition-duration: 0.4s;
+}
+  
+.s-contact-button:hover {
+    background-color: white; /* Green */
+    color: black !important;
+    border-color: white;
+}
+
+.c-row{
+    margin-top: 50px;
+}
+
+@media (max-width: 575px) {
+    .services-1 h1{
+        font-size: 20px;
+    }
+
+    .s-contact-button {
+        margin-top: 15px !important;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .tecnologias-title {
+        font-size: 30px;
+    }
+
+    .our-services-title2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 995px) {
+    .s-contact-button {
+        font-size: 15px !important;
+    }
+}

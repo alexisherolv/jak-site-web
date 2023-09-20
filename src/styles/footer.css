@@ -1,0 +1,71 @@
+.footer-text{
+    font-family: 'Ubuntu',serif;
+    color: white;
+    font-weight: 500;
+    text-align: center !important;
+}
+
+.texto-footer p{
+    text-align: left;
+    margin-left: 20px;
+    font-size: 13px;
+    margin-bottom: 3px;
+    font-family: 'Montserrat',serif;
+    
+}
+
+.iconos-footer{
+    text-align: right;
+}
+
+.iconos-footer-redes{
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.page-footer{
+    padding-top: 130px !important;
+    padding-bottom: 100px;
+    background-color: #006fb8;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.page-footer .button{
+    margin-top: 50px;
+    font-family: 'Ubuntu',sans-serif;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: 500;
+    border-radius: 20px;
+    background-color: #00a999;
+    border: 0;
+}
+
+.footer-text-frase{
+    text-align: left;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    color: white;
+}
+
+.footer-text-options {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: white;
+}
+
+@media (max-width: 575px) {
+    .texto-footer p{
+        text-align: center;
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .iconos-footer{
+        text-align: center;
+    }
+}

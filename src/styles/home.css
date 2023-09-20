@@ -1,0 +1,390 @@
+.frase-principal{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px; /* Relleno interno del contenedor */
+    background-image: linear-gradient(to right, rgba(0, 169, 153, 0.2), rgba(0, 111, 184, 0.2));
+    padding-top: 180px;
+    padding-bottom: 180px;
+    border-radius: 20px; 
+    margin-top: 100px;
+}
+
+.fade-in-text {
+    opacity: 0; /* Inicia con una opacidad de 0 para ocultar el texto */
+    animation: fadeIn 4s ease forwards; /* Aplica la animación */
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0; /* Comienza con una opacidad de 0 */
+    }
+    100% {
+      opacity: 1; /* Termina con una opacidad de 1 (completamente visible) */
+    }
+}
+
+.slide-up-text {
+    opacity: 0; /* Inicia con una opacidad de 0 para ocultar el texto */
+    animation: slideUp 2s ease forwards; /* Aplica la animación */
+    transform: translateY(100%); /* Inicia el texto fuera de la pantalla abajo */
+}
+  
+@keyframes slideUp {
+    0% {
+      opacity: 0; /* Comienza con una opacidad de 0 */
+      transform: translateY(100%); /* Comienza fuera de la pantalla abajo */
+    }
+    100% {
+      opacity: 1; /* Termina con una opacidad de 1 (completamente visible) */
+      
+    }
+}
+  
+
+.frase-principal h1{
+    width: 60%; /* Ancho del elemento */
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 85px;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.frase-principal .subtitle{
+    width: 30%; /* Ancho del elemento */
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.animated {
+    position: relative;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    line-height: 1em;
+    padding: 0 3px;
+}
+
+.nectar-scribble {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.nectar-scribble.squiggle-underline {
+    width: 100%;
+    height: 50%;
+    top: auto;
+    bottom: -30%;
+}
+
+.moving-text-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #00a999;
+    margin-bottom: 20px;
+  }
+  
+  .moving-text {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 85px;
+    font-weight: 500;
+    color: white;
+    padding-left: 1.1em;
+    white-space: nowrap;
+    animation: moveText 15s linear infinite; /* Aplica la animación */
+  }
+  
+  @keyframes moveText {
+    0% {
+      transform: translateX(-100%); /* Inicia la animación fuera de la pantalla a la izquierda */
+    }
+    100% {
+      transform: translateX(0%); /* Termina la animación fuera de la pantalla a la derecha */
+    }
+  }
+
+.services-web {
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.services-web .title{
+    margin-top: 30px;
+    text-align: left;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 650;
+    font-size: 32px;
+}
+
+.services-web .separador{
+    border: 2px solid #006fb8;
+    width: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.services-web .subtitle{
+    text-align: left;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.services-web .parrafo{
+    text-align: left;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.services-web .button{
+    margin-top: 20px;
+    font-family: 'Ubuntu',sans-serif;
+    padding: 10px;
+    font-weight: 500;
+    border-radius: 20px;
+    background-color: #006fb8;
+    border: 0;
+}
+
+.services-web .card {
+    border-radius: 4px;
+    box-shadow: 0px 2px 40px rgba(0, 111, 184, 0.3); /* Agregar sombra aquí */
+    border: 0;
+}
+
+.services-web .card .card-title {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: #00a999;
+}
+
+.services-web .card .card-text {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.services-web .card .card-item {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.services-web .card .item-0 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+.services-web .card .item-1 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc
+}
+
+.services-web .card .item-2 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ccc
+}
+
+.services-web .card .item-3 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc
+}
+
+.services-web .card .item-4 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ccc
+}
+
+.services-web .card .item-5 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-right: 1px solid #ccc;
+}
+
+.services-web .card .item-6 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.how-to {
+    margin-top: 180px;
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+    margin-bottom: 180px;
+}
+
+.how-to .title { 
+    text-align: center;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    color: #006fb8;
+    margin-bottom: 50px;
+}
+
+.how-to .item-title {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 23px;
+    color: #006fb8;
+}
+
+.how-to .item-title {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 23px;
+    color: #006fb8;
+}
+
+.how-to .item-description {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.how-to .container-2 {
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(0px);
+    transition: opacity 3s, transform 3s;
+}
+  
+.how-to .container-2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+  
+.how-to .image {
+    width: 600px;
+    height: 600px;
+    background-image: url('Cohete-6.png');
+    background-size: cover;
+    position: absolute;
+    bottom: -0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+@keyframes appear {
+    0% {
+        bottom: -200px;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+.testimonials .title {
+    margin-top: 100px;
+    text-align: center;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    color: #006fb8;
+}
+
+.testimonials .cards-testimonials {
+    padding-left: 100px;
+    padding-top: 50px;
+    padding-right: 100px;
+}
+
+.testimonials .card {
+    border-radius: 4px;
+    box-shadow: 0px 2px 7px rgba(0, 111, 184, 0.3); /* Agregar sombra aquí */
+    border: 0;
+    padding: 20px;
+    margin: 10px;
+}
+
+.testimonials .card .comment {
+    text-align: center;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.testimonials .card .card-title {
+    text-align: center;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: black;
+    padding-bottom: 15px;
+}
+
+.testimonials .card .description {
+    text-align: center;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+.partners {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.partners .title {
+    text-align: center;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    color: #00a999;
+}
+
+.partners .carrusel {
+    margin-top: 30px;
+    margin-bottom: 70px;
+    width: 80%;
+}
+
+.os-i{
+    margin-bottom: 20px;
+}
+
+.zoom2{
+    transition: transform .2s;
+}
+  
+.zoom2:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+@media (max-width: 575px) {
+
+}
