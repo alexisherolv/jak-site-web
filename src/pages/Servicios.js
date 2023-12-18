@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BrowserRouter as Router, useParams} from "react-router-dom";
 
@@ -19,340 +20,282 @@ import {
 } from "reactstrap";
 
 function Servicios() {
+    const [scrollY, setScrollY] = useState(0);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const handleScroll = () => {
+          setScrollY(window.scrollY);
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const parallaxStyle = {
+        transform: `translateY(${scrollY * 0.5}px)`, // Ajusta el valor 0.5 según la velocidad deseada
+    };
+
+    const containerStyles = {
+        overflow: 'hidden', // Oculta cualquier contenido que se desborde
+    };
+
+    const handleClickContacto = () => {
+        // Utiliza history.push para navegar a la ruta deseada
+        window.scrollTo(0, 0);
+        navigate('/contactanos');
+    };
 
     return (
         <>
-            {/*<Slides imagen = {process.env.PUBLIC_URL + '/images/SLIDE7.png'} />*/}
-            <section className="slide-contacto">
-                <div className = "slide-2">
-                    <img src={process.env.PUBLIC_URL + '/images/Banner.png'} className="img-fluid" alt="Responsive"/>
-                    <div className ="text-img-contacto">
-                        <h1>¿Tu idea es personalizada?</h1>
-                        <p>Cuéntanos y la hacemos realidad</p>
+            <div className="frase-principal-servicios fade-in-text" style={containerStyles}>
+                <div className="row">
+                    <div className="col-lg-1"></div>
+                    <div className="col-lg-10">
+                        <h1 style={parallaxStyle}>Nuestros <em className="animated">servicios<svg className="nectar-scribble squiggle-underline" viewBox="-347 -30.1947 694 96.19" preserveAspectRatio="none"><path style={{ animationDuration: "1.8s" }} d="M-335,54 C-335,54 -171,-58 -194,-3 C-217,52 -224.1199951171875,73.552001953125 -127,11 C-68,-27 -137,50 -33,42 C31.43899917602539,37.042999267578125 147.14700317382812,-29.308000564575195 335,2" stroke="#ffce59" pathLength="1" strokeWidth="8" fill="none"></path></svg></em></h1>
+                        <p className="quien-es slide-up-text" style={parallaxStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
-                </div>
-            </section>
-
-            <div className="servicios-1">
-                <div className="container">
-                    <Row className="justify-content-center">
-                        <Col className="col-sm-12 col-md-9 ">
-                            <h1 className="quienes-somos-title">Ofrecemos Servicios</h1>
-                            <p className="quienes-somos-parrafo">en el ERP JD Edwards XE, 8.xx, 9.0, 9.1 y 9.2, así como de desarrollo web los cuales son:</p>
-                        </Col>
-                    </Row>
+                    <div className="col-lg-1"></div>
                 </div>
             </div>
 
-            <div className="servicios">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm">
-                            <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                <CardBody>
-                                    <img src={process.env.PUBLIC_URL + '/images/consultoria.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                    <h1 className="services-card-title">Consultoría JDE de la versión 7332 hasta la última versión Enterprise ONE 9,2</h1>
-                                    <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Consultoría JDE&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                        <p className="v-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                    </a>
-                                </CardBody>
-                            </Card>
-                        </div>
-                        <div className="col-sm">
-                            <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                <CardBody>
-                                    <img src={process.env.PUBLIC_URL + '/images/frontend.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                    <h1 className="services-card-title">Desarrollo de Front-End utilizando tecnologías React.js / Html / Css / Javascript</h1>
-                                    <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Desarrollo de Front-End&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                        <p className="r-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                    </a>
-                                </CardBody>
-                            </Card>
-                        </div>
-                        <div className="col-sm">
-                            <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                <CardBody>
-                                    <img src={process.env.PUBLIC_URL + '/images/backend.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                    <h1 className="services-card-title">Desarrollo de Back-End (REST API's) utilizando tecnologías Node.js / Javascript</h1>
-                                    <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Desarrollo de Back-End&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                        <p className="a-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                    </a>
-                                </CardBody>
-                            </Card>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-sm">
-                            <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                <CardBody>
-                                    <img src={process.env.PUBLIC_URL + '/images/basedatos.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                    <h1 className="services-card-title">Consultoría de base de datos SQL Server, Oracle y DB2.</h1>
-                                    <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Consultoría de Base de Datos&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                        <p className="v-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                    </a>
-                                </CardBody>
-                            </Card>
-                        </div>
-                        <div className="col-sm">
-                            <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                <CardBody>
-                                    <img src={process.env.PUBLIC_URL + '/images/servidor.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                    <h1 className="services-card-title">Alojamiento de sitios web en servidores.</h1>
-                                    <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Alojamiento de Sitios Web&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                        <p className="r-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                    </a>
-                                </CardBody>
-                            </Card>
-                        </div>
-                        <div className="col-sm">
-                            <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                <CardBody>
-                                    <img src={process.env.PUBLIC_URL + '/images/modulos.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                    <h1 className="services-card-title"> Solución de raíz de integridades entre módulos.</h1>
-                                    <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Solución de Raíz de Integridades entre Módulos&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                        <p className="a-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                    </a>
-                                </CardBody>
-                            </Card>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-sm">
-                            <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                <CardBody>
-                                    <img src={process.env.PUBLIC_URL + '/images/ssl.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                    <h1 className="services-card-title">Administración de dominios y certificados SSL.</h1>
-                                    <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Administración de Dominios&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                        <p className="v-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                    </a>
-                                </CardBody>
-                            </Card>
-                        </div>
-                        <div className="col-sm">
-                            <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                <CardBody>
-                                    <img src={process.env.PUBLIC_URL + '/images/apps.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                    <h1 className="services-card-title">Desarrollo de aplicaciones móviles.</h1>
-                                    <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Desarrollo de Aplicaciones Móviles&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                        <p className="r-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                    </a>
-                                </CardBody>
-                            </Card>
-                        </div>
-                        <div className="col-sm">
-                            <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                <CardBody>
-                                    <img src={process.env.PUBLIC_URL + '/images/business.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                    <h1 className="services-card-title">Business Intelligence.</h1>
-                                    <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Business Intelligence&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                        <p className="a-link-last zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                    </a>
-                                </CardBody>
-                            </Card>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="services-1">
-                <div className="container">
-                    <Row className="justify-content-center">
-                        <Col className="col-sm-12 col-md-9 ">
-                            <h1>Creamos el sistema / aplicación que su empresa necesita</h1>
-                        </Col>
-                    </Row>
-                </div>
-            </div>
-
-            <div className="avance">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm a-izquierda">
-                            <h1>Capacitación</h1>
-                            <p>Ejecutamos capacitaciones de acuerdo con las necesidades y requerimientos de cada Empresa, haciendo mucho más amigable el proceso de adopción de los módulos a utilizar, mismos que van divididos en las siguientes modalidades:</p>
-                            <div className="row c-row">
-                                <div className="col-sm-2">
-                                    <img src={process.env.PUBLIC_URL + '/images/capacitacion2.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                </div>
-                                <div className="col-sm-10">
-                                    <h4>Capacitación Estructurada</h4>
-                                    <p className="c-parrafo">Con datos de prueba general y completa en cada uno de los módulos, estos normalmente se dan en empresas que inician con el sistema JDE, o proyectos de implementación.</p>
-                                </div>
-                            </div>
+            <div className="servicios container">
+                <div className="row">
+                    <div className="col-lg-4">
+                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
                             <div className="row">
-                                <div className="col-sm-2">
-                                    <img src={process.env.PUBLIC_URL + '/images/cliente.png'} className = "zoom os-i" width="60" height="60" alt="..." />
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/1.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                 </div>
-                                <div className="col-sm-10">
-                                    <h4>Capacitación con Datos del Cliente</h4>
-                                    <p className="c-parrafo">Consiste en capacitación completa en suites o módulos en particular adecuada a los datos y procesos ya existentes en los clientes.</p>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-sm-2">
-                                    <img src={process.env.PUBLIC_URL + '/images/talleres.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                </div>
-                                <div className="col-sm-10">
-                                    <h4>Talleres</h4>
-                                    <p className="c-parrafo">Capacitación a temas específicos de uso del sistema.</p>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Desarrollo Web</p>
+                                    <p className="card-text">En nuestro enfoque de desarrollo web, creamos sitios personalizados aprovechando las tecnologías más avanzadas disponibles en el mercado.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-sm">
-                            <img src={process.env.PUBLIC_URL + '/images/capacitacion3.png'} className="img-fluid rounded shadow" alt="..."/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="our-services">
-                <div className="container">
-                    <Row className="justify-content-center">
-                        <Col className="col-sm-12 col-md-7 ">
-                            <h1 className="our-services-title2">Programas Empresariales</h1>
-                        </Col>
-                    </Row>
-                
-                    <div className="row">
-                        <div className="col-sm-4">
-                            <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                <CardBody>
-                                    <img src={process.env.PUBLIC_URL + '/images/impuestos.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                    <h1 className="services-card-title">Apoyamos en la automatización</h1>
-                                    <p className="c-dots">del manejo de los impuestos y requerimientos fiscales de las autoridades tributarias en México y Centro América:</p>
-                                    <p className="c-dots"><i className="fa fa-check-circle c-1"></i> Mantenimiento en JD Edwards</p>
-                                    <p className="c-dots"><i className="fa fa-check-circle c-2"></i> Capacitación e Implementación de JD Edwards/ One World/ Enterprise One</p>
-                                    <p className="c-dots"><i className="fa fa-check-circle c-3"></i> CFDI 4.0</p>
-                                    <p className="c-dots"><i className="fa fa-check-circle c-1"></i> Migración al CFDI 4.0</p>
-                                    <p className="c-dots"><i className="fa fa-check-circle c-2"></i> Carta Porte</p>
-                                    <p className="c-dots"><i className="fa fa-check-circle c-3"></i> Migración del complemento de pago al CFDI 4.0</p>
-                                    <p className="c-dots"><i className="fa fa-check-circle c-1"></i> Contabilidad electrónica</p>
-                                    <p className="c-dots"><i className="fa fa-check-circle c-2"></i> Complemento de pago de envío</p>
-                                    <p className="c-dots"><i className="fa fa-check-circle c-3"></i> Complemento de pago de recibo</p>
-                                    <p className="c-dots"><i className="fa fa-check-circle c-1"></i> Conciliaciones Bancarias</p>
-                                    <p className="c-dots"><i className="fa fa-check-circle c-2"></i> DIOT</p>
-                                    <p className="c-dots"><i className="fa fa-check-circle c-3"></i> Artículo 69</p>
-                                    <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Automatización de Requerimientos Fiscales&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                        <p className="a-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                    </a>
-                                </CardBody>
-                            </Card>
-                        </div>
-                        <div className="col-sm">
-                            <div className="row">
-                                <div className="col-sm">
-                                    <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                        <CardBody>
-                                            <img src={process.env.PUBLIC_URL + '/images/venta.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                            <h1 className="services-card-title">Desarrollos y soporte de sistemas de punto de venta que se conecten con el ERP.</h1>
-                                            <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Desarrollo de Sistemas de Punto de Venta&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                                <p className="r-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                            </a>
-                                        </CardBody>
-                                    </Card>
-                                </div>
-                                <div className="col-sm">
-                                    <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                        <CardBody>
-                                            <img src={process.env.PUBLIC_URL + '/images/internet.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                            <h1 className="services-card-title">Desarrollamos accesos desde soluciones basadas en internet al ERP desarrolladas en .NET y C#.</h1>
-                                            <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Desarrollo de Accesos Desde Soluciones Basadas en Internet al ERP&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                                <p className="v-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                            </a>
-                                        </CardBody>
-                                    </Card>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-sm">
-                                    <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                        <CardBody>
-                                            <img src={process.env.PUBLIC_URL + '/images/appmovil.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                            <h1 className="services-card-title">Desarrollamos a través de un socio de negocio sistemas gerenciales móviles.</h1>
-                                            <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Desarrollo de Sistemas Gerenciales Móviles.&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                                <p className="a-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                            </a>
-                                        </CardBody>
-                                    </Card>
-                                </div>
-                                <div className="col-sm">
-                                    <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                                        <CardBody>
-                                            <img src={process.env.PUBLIC_URL + '/images/contabilidad.png'} className = "zoom os-i" width="60" height="60" alt="..." />
-                                            <h1 className="services-card-title">Apoyo en la definición de los modelos de uso de la contabilidad gubernamental.</h1>
-                                            <a className="buttons-link" href="mailto:contacto@gtcta.mx?&subject=Cotización Contabilidad Gubernamental&body=Por favor coloque sus datos AQUÍ" target="_blank">
-                                                <p className="r-link zoom2">Cotizar <i className="fa fa-chevron-right"></i></p>
-                                            </a>
-                                        </CardBody>
-                                    </Card>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="tecnologias">
-                <Row className="justify-content-center">
-                    <Col className="col-sm-12 col-md-9 ">
-                        <h1 className="tecnologias-title">Tecnologías</h1>
-                    </Col>
-                </Row>
-                <Row className="justify-content-center">
-                    <Col className="col-sm-12 col-md-10 ">
-                        <Swiper
-                            slidesPerView={5}
-                            centeredSlides={true}
-                            spaceBetween={30}
-                            autoplay={{
-                                delay: 2500,
-                                disableOnInteraction: false,
-                            }}
-                            /*pagination={{
-                                clickable: true,
-                            }}*/
-                            navigation={true}
-                            modules={[Autoplay, Pagination, Navigation]}
-                            className="mySwiper"
-                        >
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/jde.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/c.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/net.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/html.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/css.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/javascript.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/react.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/nodejs.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/sass.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/sqlserver.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/mongodb.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/bootstrap.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/android.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/ios.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                            <SwiperSlide><img src={process.env.PUBLIC_URL + '/images/invoiceone.png'} className="img-fluid" alt="Responsive"/></SwiperSlide>
-                        </Swiper>
-                    </Col>
-                </Row>
-            </div>
-
-            <div className="container">
-                <Row className="justify-content-center">
-                    <Col className="col-sm-12 col-md-10 ">
-                        <Card className="s-contact shadow p-3 mb-5 bg-white rounded">
-                            <CardBody>
-                                <div className="row">
-                                    <div className="col-sm-9">
-                                        <h1 className="s-contact-title">Contáctanos y recibe un presupuesto a tu medida</h1>
-                                    </div>
-                                    <div className="col-sm-3">
-                                        <Button className="s-contact-button" onClick={() => {}}><i className="fa fa-phone"/> Contáctanos</Button>
-                                    </div>
-                                </div>
-                            </CardBody>
                         </Card>
-                    </Col>
-                </Row>
+                    </div>
+                    <div className="col-lg-4">
+                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/2.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Ecommerce</p>
+                                    <p className="card-text">Desde el diseño de tiendas en línea atractivas hasta la implementación de soluciones de comercio electrónico seguras y eficientes.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                    <div className="col-lg-4">
+                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/3.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Desarrollo WordPress</p>
+                                    <p className="card-text">Implementamos plataformas rápidas, flexibles, seguras y centradas en el usuario final, a través del CMS más popular.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-4">
+                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/4.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Maquetación Web</p>
+                                    <p className="card-text">Somos el equipo de expertos en desarrollo Frontend que puedes contar para llevar a cabo proyectos que demanden un nivel adicional de apoyo debido a su complejidad en el diseño.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>  
+                    <div className="col-lg-4">
+                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/5-1.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">UIX/UI Diseño Web</p>
+                                    <p className="card-text">Nuestro equipo trabaja en estrecha colaboración contigo para crear interfaces atractivas, intuitivas y centradas en el usuario. Convertimos tus ideas en realidades digitales.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                    <div className="col-lg-4">
+                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/5.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Posicionamiento SEO</p>
+                                    <p className="card-text">Amplia experiencia en el posicionamiento orgánico de plataformas webs, sin penalizaciones. Posicionando webs de diferentes sectores.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-4">
+                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/6.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Ciberseguridad</p>
+                                    <p className="card-text">Implementación de políticas, controles y sistemas de seguridad tanto para entornos Web, como corporativos. Apoyados en importantes partners del sector.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                    <div className="col-lg-4">
+                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/8.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Marketing Digital</p>
+                                    <p className="card-text">Nuestro equipo de expertos en marketing digital está listo para diseñar estrategias personalizadas que maximicen tu visibilidad en la web y generen resultados significativos.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                    <div className="col-lg-4">
+                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/9.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Redes sociales</p>
+                                    <p className="card-text">Nuestro equipo se encarga de construir y mantener una sólida presencia en las redes sociales para tu marca, conectándote de manera efectiva con tu audiencia y maximizando tu impacto.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-4">
+                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/10.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Creación de contenido</p>
+                                    <p className="card-text">Desde videos cautivadores hasta imágenes de alta calidad y contenido interactivo, damos vida a tu visión y conectar con tu audiencia de manera efectiva a través de diversos medios.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                    <div className="col-lg-4">
+                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/12.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Branding</p>
+                                    <p className="card-text">Te ayudamos a potenciar y fortalecer la identidad de tu marca, asegurando que destaque en un mercado competitivo y conecte de manera efectiva con tu audiencia.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                    <div className="col-lg-4">
+                    </div>
+                </div>
             </div>
+
+            <div className="container how-to-make">
+                <div className="row">
+                    <div className="col-lg-6">
+                        <h1>¿Cómo lo hacemos?</h1>
+                        <ul className="custom-list">
+                            <li><strong>Entendimiento:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                            <li><strong>Planeación:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                            <li><strong>Implementación:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                            <li><strong>Retrospectiva:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                            <li><strong>Soporte:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                        </ul>
+                    </div>
+                    <div className="col-lg-6 d-flex align-items-center justify-content-center">
+                        <img src={process.env.PUBLIC_URL + '/images/servicios.png'} className="img-fluid" alt="..."/>
+                    </div>
+                </div>
+            </div>
+
+            <div className="why container">
+                <h1>¿Por qué Elegir Nuestros Servicios de Desarrollo Web?</h1>
+                <p className="subtitle">Los años de experiencia en el desarrollo de aplicaciones web hacen que nuestro equipo de soñadores y hacedores sea más competente y efectivo en la entrega de soluciones de vanguardia.</p>
+                <div className="row">
+                    <div className="col-md-6">
+                        <Card className="why-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/17.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Pronta Personalización</p>
+                                    <p className="card-text">Nuestros desarrolladores web experimentados proporcionan soluciones web de personalización sobre la marcha, ahorramos tiempo y entregamos un producto de calidad.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                    <div className="col-md-6">
+                        <Card className="why-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/18.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Equipo Calificado</p>
+                                    <p className="card-text">Nuestros desarrolladores web experimentados proporcionan soluciones web de personalización sobre la marcha, ahorramos tiempo y entregamos un producto de calidad.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-6">
+                        <Card className="why-card shadow p-3 mb-5 bg-white rounded d-flex align-items-stretch">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/19.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Solución Asequible</p>
+                                    <p className="card-text">Nuestros desarrolladores web experimentados proporcionan soluciones web de personalización sobre la marcha, ahorramos tiempo y entregamos un producto de calidad.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                    <div className="col-md-6">
+                        <Card className="why-card shadow p-3 mb-5 bg-white rounded d-flex align-items-stretch">
+                            <div className="row">
+                                <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/20.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Diseño Perfecto</p>
+                                    <p className="card-text">Nuestros desarrolladores web experimentados proporcionan soluciones web de personalización sobre la marcha, ahorramos tiempo y entregamos un producto de calidad.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                </div>
+            </div> 
         </>  
     );
 }

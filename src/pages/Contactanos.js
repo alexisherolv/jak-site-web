@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 import {
     Button,
@@ -30,6 +31,9 @@ function Contactanos() {
 
     //Para resetear el input file al enviar correo
     const [theInputKey, setTheInputKey] = useState("")
+
+    const [scrollY, setScrollY] = useState(0);
+    const navigate = useNavigate();
 
     // function that verifies if a string has a given length or not
     const verifyLength = (value, length) => {
@@ -125,29 +129,48 @@ function Contactanos() {
         setTheInputKey(randomString)
     }
 
+    const parallaxStyle = {
+        transform: `translateY(${scrollY * 0.5}px)`, // Ajusta el valor 0.5 según la velocidad deseada
+    };
+
+    const containerStyles = {
+        overflow: 'hidden', // Oculta cualquier contenido que se desborde
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+          setScrollY(window.scrollY);
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const handleClickContacto = () => {
+        // Utiliza history.push para navegar a la ruta deseada
+        window.scrollTo(0, 0);
+        navigate('/contactanos');
+    };
+
     return (
         <>
-            {/*<Slides imagen = {process.env.PUBLIC_URL + '/images/SLIDE7.png'} />*/}
-            <section className="slide-contacto">
-                <div className = "slide-2">
-                    <img src={process.env.PUBLIC_URL + '/images/Banner.png'} className="img-fluid" alt="Responsive"/>
-                    <div className ="text-img-contacto">
-                        <h1>Cuéntanos tu idea</h1>
-                        <p>Será un placer leerte</p>
-                    </div>
-                </div>
-            </section>
-
             <div className="contact-form">
+                <div className="title fade-in-text">
+                    <h1>¡Cuéntanos tu <em className="animated">idea<svg className="nectar-scribble squiggle-underline" viewBox="-347 -30.1947 694 96.19" preserveAspectRatio="none"><path style={{ animationDuration: "1.8s" }} d="M-335,54 C-335,54 -171,-58 -194,-3 C-217,52 -224.1199951171875,73.552001953125 -127,11 C-68,-27 -137,50 -33,42 C31.43899917602539,37.042999267578125 147.14700317382812,-29.308000564575195 335,2" stroke="#ffce59" pathLength="1" strokeWidth="8" fill="none"></path></svg></em>!</h1>
+                    <p className="subtitle slide-up-text">Será un placer leerte</p>
+                </div>
+
                 <div className="container">
                     <div className="row">
-                        <div className="col-sm">
-                            <h1 className="contact-form-title">Contáctanos</h1>
+                        <div className="col-lg-6 formulario">
                             <Form id="RegisterValidation">
                                 <div className="row">
                                     <div className="col-sm">
                                         <FormGroup className={`has-label ${nombreState}`}>
-                                            <label className="form-label">Nombre *</label>
+                                            <label className="form-label">Cómo te gusta que te digamos *</label>
                                             <Input
                                                 className="form-input"
                                                 name="nombre"
@@ -172,7 +195,7 @@ function Contactanos() {
                                     </div>
                                     <div className="col-sm">
                                         <FormGroup className={`has-label ${apellidoState}`}>
-                                            <label className="form-label">Apellido *</label>
+                                            <label className="form-label">Edad *</label>
                                             <Input
                                                 className="form-input"
                                                 name="apellido"
@@ -198,31 +221,6 @@ function Contactanos() {
                                 </div>
                                 <div className="row">
                                     <div className="col-sm">
-                                        <FormGroup className={`has-label ${telefonoState}`}>
-                                            <label className="form-label">Telefono *</label>
-                                            <Input
-                                                className="form-input"
-                                                name="nombre"
-                                                type="text"
-                                                key={theInputKey || '' }
-                                                autoComplete="off"
-                                                onChange={(e) => {
-                                                    if (!verifyLength(e.target.value, 1)) {
-                                                        setTelefonoState("has-danger");
-                                                    } else {
-                                                        setTelefonoState("has-success");
-                                                    }
-                                                    setTelefono(e.target.value);
-                                                }}
-                                            />
-                                            {telefonoState === "has-danger" ? (
-                                                <label className="error">
-                                                Este campo es requerido.
-                                                </label>
-                                            ) : null}
-                                        </FormGroup>
-                                    </div>
-                                    <div className="col-sm">
                                         <FormGroup className={`has-label ${emailState}`}>
                                             <label className="form-label">Email *</label>
                                             <Input
@@ -247,8 +245,34 @@ function Contactanos() {
                                             ) : null}
                                         </FormGroup>
                                     </div>
+                                    <div className="col-sm">
+                                        <FormGroup className={`has-label ${telefonoState}`}>
+                                            <label className="form-label">Teléfono *</label>
+                                            <Input
+                                                className="form-input"
+                                                name="nombre"
+                                                type="text"
+                                                key={theInputKey || '' }
+                                                autoComplete="off"
+                                                onChange={(e) => {
+                                                    if (!verifyLength(e.target.value, 1)) {
+                                                        setTelefonoState("has-danger");
+                                                    } else {
+                                                        setTelefonoState("has-success");
+                                                    }
+                                                    setTelefono(e.target.value);
+                                                }}
+                                            />
+                                            {telefonoState === "has-danger" ? (
+                                                <label className="error">
+                                                Este campo es requerido.
+                                                </label>
+                                            ) : null}
+                                        </FormGroup>
+                                    </div>
+                                    
                                     <FormGroup className={`has-label ${messageState}`}>
-                                            <label className="form-label">Mensaje *</label>
+                                            <label className="form-label">Ahora cuéntanos cuál es la idea que te ayudaremos a hacer realidad *</label>
                                             <Input
                                                 className="form-input"
                                                 name="mensaje"
@@ -272,7 +296,7 @@ function Contactanos() {
                                     </FormGroup>
                                 </div>
                             </Form>
-                            <Button className="azul-button" onClick={registerClick}>ENVIAR</Button>
+                            <Button className="azul-button" onClick={registerClick}>Hagámoslo juntos</Button>
                             <p className="error">
                                 {messageEnvioError}
                             </p>
@@ -280,43 +304,9 @@ function Contactanos() {
                                 {messageEnvioCorrect}
                             </p>
                         </div>
-                        <div className="col-sm">
-                            <img src={process.env.PUBLIC_URL + '/images/contacto-gtc.png'} className="img-fluid shadow  mb-5  rounded" alt="..." />
+                        <div className="col-lg-6">
+                            <img src={process.env.PUBLIC_URL + '/images/contacto.png'} className="img-fluid" alt="..." />
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="container contact-options">
-                <div className="row">
-                    <div className="col-sm text-center">
-                        <Card className="card-options shadow p-3 mb-5 bg-white rounded">
-                            <CardBody>
-                                <img src={process.env.PUBLIC_URL + '/images/ubicacion.png'} className = "zoom os-i" width="70" height="70" alt="..." />
-                                <h1 className="co-title">Dirección</h1>
-                                <p className="co-parrafo"> <i className="fa fa-thumb-tack"/> Calle Cañito 80, San Diego Ocoyoacac, Miguel Hidalgo, C.P. 11290 CDMX</p>
-                            </CardBody>
-                        </Card>
-                    </div>
-                    <div className="col-sm text-center">
-                        <Card className="card-options shadow p-3 mb-5 bg-white rounded">
-                            <CardBody>
-                                <img src={process.env.PUBLIC_URL + '/images/correo.png'} className = "zoom os-i" width="70" height="70" alt="..." />
-                                <h1 className="co-title">Correo Electrónico</h1>
-                                <p className="co-parrafo-phone"> <i className="fa fa-envelope"/> contacto@jak.mx</p>
-                                <p className="co-parrafo-phone"> <i className="fa fa-envelope"/> alberto@jak.mx</p>
-                            </CardBody>
-                        </Card>
-                    </div>
-                    <div className="col-sm text-center">
-                        <Card className="card-options shadow p-3 mb-5 bg-white rounded">
-                            <CardBody>
-                                <img src={process.env.PUBLIC_URL + '/images/phone.png'} className = "zoom os-i" width="70" height="70" alt="..." />
-                                <h1 className="co-title">Teléfono</h1>
-                                <p className="co-parrafo-phone"> <i className="fa fa-phone"/> 55 4565 3967</p>
-                                <p className="co-parrafo-phone"> <i className="fa fa-phone"/> 55 4364 1006</p>
-                            </CardBody>
-                        </Card>
                     </div>
                 </div>
             </div>

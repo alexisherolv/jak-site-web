@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
     const [scrolled, setScrolled] = useState(false);
+    const navigate = useNavigate();
 
     const handleScroll=() => {
         const offset=window.scrollY;
@@ -23,12 +25,36 @@ function Navbar() {
         navbarClasses.push('scrolled');
     }
 
+    const handleClickInicio = () => {
+        // Utiliza history.push para navegar a la ruta deseada
+        window.scrollTo(0, 0);
+        navigate('/');
+    };
+
+    const handleClickConocenos = () => {
+        // Utiliza history.push para navegar a la ruta deseada
+        window.scrollTo(0, 0);
+        navigate('/conocenos');
+    };
+
+    const handleClickServicios = () => {
+        // Utiliza history.push para navegar a la ruta deseada
+        window.scrollTo(0, 0);
+        navigate('/servicios');
+    };
+
+    const handleClickContacto = () => {
+        // Utiliza history.push para navegar a la ruta deseada
+        window.scrollTo(0, 0);
+        navigate('/contactanos');
+    };
+
     return (
        <div>
             <nav className = {navbarClasses.join(" ")}>
-                <Link className="navbar-brand logo" aria-current="page" to="/">
-                        <img src={process.env.PUBLIC_URL + '/images/logo-jak.png'} width="90" alt="JAK" />
-                </Link>
+                <div className="navbar-brand logo" onClick={handleClickInicio}>
+                    <img src={process.env.PUBLIC_URL + '/images/logo-jak.png'} width="90" alt="JAK" />
+                </div>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -36,24 +62,24 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mx-auto ">
                         <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" to="/">
+                            <div className="nav-link" onClick={handleClickInicio}>
                                 Inicio
-                            </Link>
+                            </div>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" to="/conocenos">
+                            <div className="nav-link" onClick={handleClickConocenos}>
                                 Conócenos
-                            </Link>
+                            </div>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" to="/servicios">
+                            <div className="nav-link" onClick={handleClickServicios}>
                                 Servicios
-                            </Link>
+                            </div>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" to="/contactanos">
+                            <div className="nav-link" onClick={handleClickContacto}>
                                 Contacto
-                            </Link>
+                            </div>
                         </li>
                     </ul>  
                     <div className="row actions2" >

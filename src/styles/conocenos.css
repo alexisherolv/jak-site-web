@@ -1,64 +1,86 @@
-.quienes-somos{
-    padding-top: 100px;
-    padding-bottom: 100px;
+.frase-principal-conocenos{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px; /* Relleno interno del contenedor */
+    background-image: linear-gradient(to right, rgba(0, 169, 153, 0.9), rgba(0, 111, 184, 0.9));
+    padding-top: 130px;
+    padding-bottom: 130px;
+    border-radius: 20px; 
+    margin-top: 100px;
 }
 
-.quienes-somos-title {
-    text-align: center !important;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 50px;
+.fade-in-text {
+    opacity: 0; /* Inicia con una opacidad de 0 para ocultar el texto */
+    animation: fadeIn 4s ease forwards; /* Aplica la animación */
 }
 
-.quienes-somos-parrafo {
+.frase-principal-conocenos h1{
     text-align: center;
-    font-family: 'Montserrat',serif;
-    font-size: large;
-    color: #616161;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 75px;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+.frase-principal-conocenos .subtitle{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    color: white;
+}
+
+.frase-principal-conocenos .quien-es{
+    text-align: left;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
 }
 
 .su-fundacion-title {
     text-align: center;
-    font-family: 'Montserrat',serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 650;
     font-size: 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 100px;
+    margin-bottom: 20px;
 }
 
 .su-fundacion{
     padding-bottom: 50px;
-    padding-top: 50px;
-    background-color: #F6F5F5;
+    margin-top: 100px;
 }
 
 .su-fundacion-derecha{
-    margin-right: 50px;
-    font-family: 'Montserrat',serif;
-    margin-left: 50px;
-    margin-right: 50px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 10px;
 }
 
-.su-fundacion-rfc{
-    margin-top: 60px;
+.mision-vision {
+    margin-top: 140px !important;
+    margin-bottom: 140px !important;
 }
 
 .mision {
     border: 0 !important;
-    margin-top: 100px;
-    background: -webkit-linear-gradient(left, #00a999, #006fb8) !important;
+    background-color: #00a999 !important;
 }
 
 .vision {
     border: 0 !important;
-    margin-top: 100px;
-    margin-bottom: 100px !important;
-    background: -webkit-linear-gradient(left, #00a999, #006fb8);
+    background-color: #00a999 !important;
 }
 
 .mision-vision-title {
     text-align: center;
-    font-family: 'Montserrat',serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 650;
     font-size: 40px;
     color: white
@@ -67,7 +89,7 @@
 .mision-vision-subtitle {
     margin-top: 50px;
     text-align: center;
-    font-family: 'Montserrat',serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 650;
     font-size: 20px;
     color: white
@@ -75,106 +97,70 @@
 
 .mision-vision-parrafo {
     text-align: center;
-    font-family: 'Montserrat',serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: large;
     color: white;
     padding-bottom: 20px;
 }
 
-.valores{
-    padding-bottom: 100px;
+.call-to-action-2 {
+    margin-top: 180px;
+    padding-left: 50px;
+    padding-right: 50px !important;
+    background-image: linear-gradient(to right, rgba(0, 169, 153, 0.3), rgba(0, 111, 184, 0.3));
 }
 
-.v-izquierda{
-    padding-top: 50px;
-    padding-bottom: 100px;
+.call-to-action-2 .text {
+    padding-top: 120px;
+    padding-bottom: auto;
 }
 
-.v-link{
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 10px;
-    color: #D90607 !important;
-}
-
-.valores h1 {
-    text-align: left;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 40px;
-}
-
-.valores h2 {
-    text-align: left;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 20px;
-}
-
-.valores h4 {
-    text-align: left !important;
-    font-family: 'Montserrat',serif;
-    font-weight: 500;
-    font-size: 22px;
-    color: #D90607 !important;
-    padding-bottom: 0px !important;
-}
-
-.valores p{
-    text-align: left;
-    font-family: 'Montserrat',serif;
-    font-size: large;
-    color: #616161;
-}
-
-.valores-img{
-    width: 100%;
-    height: 100%;
-}
-
-.v-1{
-    color: #1C932B;
-    font-size: 30px;
-}
-
-.v-2{
-    color: #D90607;
-    font-size: 30px;
-}
-
-.v-3{
-    color: #020167;
-    font-size: 30px;
-}
-
-.valores-title {
-    padding-bottom: 50px;
-    text-align: center !important;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 50px;
-}
-
-.brochure{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background: -webkit-linear-gradient(left, #D90607, #FF5757);
-}
-
-.brochure h1{
+.call-to-action-2 .title { 
     text-align: center;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 25px;
-    color: white
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    margin-bottom: 20px;
 }
 
-.brochure a:link{
+.call-to-action-2 .subtitle { 
+    text-align: center;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 27px;
+    margin-bottom: 50px;
+}
+
+.call-to-action-2 .button{
+    margin-top: 20px;
+    font-family: 'Ubuntu',sans-serif;
+    padding: 10px;
+    font-weight: 500;
+    border-radius: 20px;
+    background-color: #006fb8;
+    font-size: 20px;
+    color: white;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; /* Esto hace que el botón sea un bloque y ocupe todo el ancho disponible */
+    width: fit-content; /* Ajusta el ancho al contenido del botón */
+}
+
+.call-to-action-2 .button:hover{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.call-to-action-2 .button:hover{
+    background-color: #00a999;
     color: white;
 }
 
-.brochure a:visited{
-    color: white;
+@media (min-width: 0px) and (max-width: 990px) {
+    .frase-principal-conocenos .quien-es{
+        text-align: center;
+        padding-top: 30px;
+    }
 }
 
 @media (max-width: 575px) {

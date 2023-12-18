@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, useParams } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -23,6 +25,8 @@ function Home() {
 
     const [isVisible, setIsVisible] = useState(false);
     const imageRef = useRef(null);
+
+    const navigate = useNavigate();
 
     const handleScroll = () => {
         if (imageRef.current) {
@@ -64,6 +68,12 @@ function Home() {
     const containerStyles = {
         overflow: 'hidden', // Oculta cualquier contenido que se desborde
     };
+
+    const handleClickContacto = () => {
+        // Utiliza history.push para navegar a la ruta deseada
+        window.scrollTo(0, 0);
+        navigate('/contactanos');
+    };
     
     return (
         <>
@@ -74,22 +84,22 @@ function Home() {
             
             <div className="container services-web">
                 <div className="row">
-                    <div className="col-1">
+                    <div className="col-lg-1">
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3 explicacion">
                         <h1 className="title">Servicios de programación web</h1>
-                        <div class="separador"></div>
+                        <div className="separador"></div>
                         <h1 className="subtitle">Expertos en desarrollo web</h1>
                         <p className="parrafo">Nuestro equipo está formado por profesionales diversos con amplia experiencia en desarrollo web y diseño web, adaptándonos tanto a las necesidades de grandes corporaciones como de pequeñas empresas. Aplicamos nuestro talento en el ámbito digital de manera estratégica, teniendo en cuenta sus metas y presupuesto, para ofrecerle una propuesta de valor que impulsará el crecimiento de su negocio. Ya sea que desee crear un sitio web desde cero o mejorar y promocionar su sitio web existente (¡o ambas cosas!), estamos aquí para asistirle en cada paso del camino.</p>
-                        <Button className="button" onClick={() => {}}>Más información</Button>
+                        <Button className="button" onClick={handleClickContacto}>Más información</Button>
                     </div>
-                    <div className="col-7">
+                    <div className="col-lg-7">
                         <Card className="card">
                             <div className="row card-item item-0">
-                                <div className="col-2">
+                                <div className="col-lg-2">
                                     <img src={process.env.PUBLIC_URL + '/images/1.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                 </div>
-                                <div className="col">
+                                <div className="col-lg-10">
                                     <p className="card-title">Desarrollo Web</p>
                                     <p className="card-text">En nuestro enfoque de desarrollo web, creamos sitios personalizados aprovechando las tecnologías más avanzadas disponibles en el mercado (React, Bootstrap, HTML, CSS, JS).</p>
                                 </div>
@@ -97,7 +107,7 @@ function Home() {
                             <div className="row card-item">
                                 <div className="col item-1">
                                     <div className="row">
-                                        <div className="col-3">
+                                        <div className="col-lg-3">
                                          <img src={process.env.PUBLIC_URL + '/images/2.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                         </div>
                                         <div className="col">
@@ -108,7 +118,7 @@ function Home() {
                                 </div>
                                 <div className="col item-2">
                                     <div className="row">
-                                        <div className="col-3">
+                                        <div className="col-lg-3">
                                             <img src={process.env.PUBLIC_URL + '/images/3.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                         </div>
                                         <div className="col">
@@ -121,7 +131,7 @@ function Home() {
                             <div className="row card-item">
                                 <div className="col item-3">
                                     <div className="row">
-                                        <div className="col-3">
+                                        <div className="col-lg-3">
                                             <img src={process.env.PUBLIC_URL + '/images/5-1.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                         </div>
                                         <div className="col">
@@ -132,7 +142,7 @@ function Home() {
                                 </div>
                                 <div className="col item-4">
                                     <div className="row">
-                                        <div className="col-3">
+                                        <div className="col-lg-3">
                                             <img src={process.env.PUBLIC_URL + '/images/4.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                         </div>
                                         <div className="col">
@@ -145,7 +155,7 @@ function Home() {
                             <div className="row card-item">
                                 <div className="col item-5">
                                     <div className="row">
-                                        <div className="col-3">
+                                        <div className="col-lg-3">
                                             <img src={process.env.PUBLIC_URL + '/images/5.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                         </div>
                                         <div className="col">
@@ -156,7 +166,7 @@ function Home() {
                                 </div>
                                 <div className="col item-6">
                                     <div className="row">
-                                        <div className="col-3">
+                                        <div className="col-lg-3">
                                             <img src={process.env.PUBLIC_URL + '/images/6.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                         </div>
                                         <div className="col">
@@ -168,7 +178,7 @@ function Home() {
                             </div>
                         </Card>
                     </div>
-                    <div className="col-1">
+                    <div className="col-lg-1">
                     </div>
                 </div>
             </div>
@@ -176,39 +186,39 @@ function Home() {
             <div className="container how-to">
                 <h1 className="title">¿Cómo trabajamos?</h1>
                 <div className="row">
-                    <div className="col-3">
+                    <div className="col-lg-3">
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-lg-6">
                                 <img src={process.env.PUBLIC_URL + '/images/6.png'} className = "zoom os-i" width="110" height="110" alt="..." />
                             </div>
                             <h1 className="item-title">Arquitectura del software</h1>
                             <p className="item-description">Ofrecemos a nuestros clientes un marco de trabajo transparente mediante un documento funcional que detalla el alcance, tecnologías y comportamiento de la aplicación final. </p>
                         </div>
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-lg-6">
                                 <img src={process.env.PUBLIC_URL + '/images/6.png'} className = "zoom os-i" width="110" height="110" alt="..." />
                             </div>
                             <h1 className="item-title">Arquitectura del software</h1>
                             <p className="item-description">Ofrecemos a nuestros clientes un marco de trabajo transparente mediante un documento funcional que detalla el alcance, tecnologías y comportamiento de la aplicación final. </p>
                         </div>
                     </div>
-                    <div className={`col-6 container-2 ${isVisible ? 'visible' : ''}`}>
+                    <div className={`col-lg-6 container-2 ${isVisible ? 'visible' : ''}`}>
                         <div
                             className="image"
                             ref={imageRef}
                             style={isVisible ? { animation: 'appear 2s forwards' } : {}}
                         ></div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-lg-6">
                                 <img src={process.env.PUBLIC_URL + '/images/6.png'} className = "zoom os-i" width="110" height="110" alt="..." />
                             </div>
                             <h1 className="item-title">Arquitectura del software</h1>
                             <p className="item-description">Ofrecemos a nuestros clientes un marco de trabajo transparente mediante un documento funcional que detalla el alcance, tecnologías y comportamiento de la aplicación final. </p>
                         </div>
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-lg-6">
                                 <img src={process.env.PUBLIC_URL + '/images/6.png'} className = "zoom os-i" width="110" height="110" alt="..." />
                             </div>
                             <h1 className="item-title">Arquitectura del software</h1>
@@ -220,19 +230,19 @@ function Home() {
 
             <div className="container services-web">
                 <div className="row">
-                    <div className="col-1">
+                    <div className="col-lg-1">
                     </div>
-                    <div className="col-3">
+                    <div className="col-lg-3">
                         <h1 className="title">Otros servicios</h1>
-                        <div class="separador"></div>
+                        <div className="separador"></div>
                         <h1 className="subtitle">Marketing digital</h1>
                         <p className="parrafo">Nuestra capacidad para desarrollar estrategias efectivas de marketing digital, que abarcan desde la optimización de motores de búsqueda (SEO) hasta la publicidad en redes sociales y la gestión de campañas de email marketing, nos permite ofrecer soluciones personalizadas que generan resultados tangibles y ayudan a las empresas a alcanzar sus objetivos en línea.</p>
-                        <Button className="button" onClick={() => {}}>Más información</Button>
+                        <Button className="button" onClick={handleClickContacto}>Más información</Button>
                     </div>
-                    <div className="col-7">
+                    <div className="col-lg-7">
                         <Card className="card">
                             <div className="row card-item item-0">
-                                <div className="col-2">
+                                <div className="col-lg-2">
                                     <img src={process.env.PUBLIC_URL + '/images/8.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                 </div>
                                 <div className="col">
@@ -243,7 +253,7 @@ function Home() {
                             <div className="row card-item">
                                 <div className="col item-1">
                                     <div className="row">
-                                        <div className="col-3">
+                                        <div className="col-lg-3">
                                             <img src={process.env.PUBLIC_URL + '/images/9.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                         </div>
                                         <div className="col">
@@ -254,7 +264,7 @@ function Home() {
                                 </div>
                                 <div className="col item-2">
                                     <div className="row">
-                                        <div className="col-3">
+                                        <div className="col-lg-3">
                                             <img src={process.env.PUBLIC_URL + '/images/10.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                         </div>
                                         <div className="col">
@@ -265,46 +275,58 @@ function Home() {
                                 </div>
                             </div>
                             <div className="row card-item item-6">
-                                <div className="col-2">
+                                <div className="col-lg-2">
                                     <img src={process.env.PUBLIC_URL + '/images/12.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                 </div>
                                 <div className="col">
-                                    <p className="card-title">Brand Management</p>
+                                    <p className="card-title">Branding</p>
                                     <p className="card-text">Te ayudamos a potenciar y fortalecer la identidad de tu marca, asegurando que destaque en un mercado competitivo y conecte de manera efectiva con tu audiencia.</p>
                                 </div>
                             </div>
                         </Card>
                     </div>
-                    <col className="col-1">
+                    <col className="col-lg-1">
                     </col>
+                </div>
+            </div>
+
+            <div className="call-to-action">
+                <div className="row">
+                    <div className="col-lg-7 text">
+                        <h1 className="title">¡Desarrollo Web a Medida!</h1>
+                        <Button className="button" onClick={handleClickContacto}>Contáctanos</Button>
+                    </div>
+                    <div className="col-lg-5 text-center">
+                        <img src={process.env.PUBLIC_URL + '/images/desarrollo-web.png'} width="500" alt="..." />
+                    </div>
                 </div>
             </div>
            
            <div className="container testimonials">
                 <h1 className="title">¿Qué opinan nuestros clientes?</h1>
-                <Row className="cards-testimonials">
-                    <Col>
+                <div className="row cards-testimonials">
+                    <div className="col-lg-4">
                         <Card className="card">
                             <p className="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             <h1 className="card-title">Victor Vera</h1>
                             <h4 className="description">CEO y Fundador de Solutions Systems</h4>
                         </Card>
-                    </Col>
-                    <Col>
+                    </div>
+                    <div className="col-lg-4">
                         <Card className="card">
                             <p className="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             <h1 className="card-title">Victor Vera</h1>
                             <h4 className="description">CEO y Fundador de Solutions Systems</h4>
                         </Card>
-                    </Col>
-                    <Col>
+                    </div>
+                    <div className="col-lg-4">
                         <Card className="card">
                             <p className="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             <h1 className="card-title">Victor Vera</h1>
                             <h4 className="description">CEO y Fundador de Solutions Systems</h4>
                         </Card>
-                    </Col>
-                </Row>
+                    </div>
+                </div>
            </div>
 
            <div className="container partners">
@@ -322,51 +344,51 @@ function Home() {
                         modules={[Autoplay, Pagination, Navigation]}
                         >
                         <SwiperSlide>
-                            <img src={process.env.PUBLIC_URL + '/images/c-1.png'} width="370" alt="..." />
+                            <img className="img" src={process.env.PUBLIC_URL + '/images/c-1.png'} alt="..." />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={process.env.PUBLIC_URL + '/images/c-2.png'} width="370" alt="..." />
+                            <img className="img" src={process.env.PUBLIC_URL + '/images/c-2.png'} alt="..." />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={process.env.PUBLIC_URL + '/images/c-3.png'} width="370" alt="..." />
+                            <img className="img" src={process.env.PUBLIC_URL + '/images/c-3.png'} alt="..." />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={process.env.PUBLIC_URL + '/images/c-4.png'} width="370" alt="..." />
+                            <img className="img" src={process.env.PUBLIC_URL + '/images/c-4.png'} alt="..." />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={process.env.PUBLIC_URL + '/images/c-5.png'} width="370" alt="..." />
+                            <img className="img" src={process.env.PUBLIC_URL + '/images/c-5.png'} alt="..." />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={process.env.PUBLIC_URL + '/images/c-6.png'} width="370" alt="..." />
+                            <img className="img" src={process.env.PUBLIC_URL + '/images/c-6.png'} alt="..." />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={process.env.PUBLIC_URL + '/images/c-7.png'} width="370" alt="..." />
+                            <img className="img" src={process.env.PUBLIC_URL + '/images/c-7.png'} alt="..." />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={process.env.PUBLIC_URL + '/images/c-8.png'} width="370" alt="..." />
+                            <img className="img" src={process.env.PUBLIC_URL + '/images/c-8.png'} alt="..." />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={process.env.PUBLIC_URL + '/images/c-9.png'} width="370" alt="..." />
+                            <img className="img" src={process.env.PUBLIC_URL + '/images/c-9.png'} alt="..." />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={process.env.PUBLIC_URL + '/images/c-10.png'} width="370" alt="..." />
+                            <img className="img" src={process.env.PUBLIC_URL + '/images/c-10.png'} alt="..." />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={process.env.PUBLIC_URL + '/images/c-11.png'} width="370" alt="..." />
+                            <img className="img" src={process.env.PUBLIC_URL + '/images/c-11.png'} alt="..." />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={process.env.PUBLIC_URL + '/images/c-12.png'} width="370" alt="..." />
+                            <img className="img" src={process.env.PUBLIC_URL + '/images/c-12.png'} alt="..." />
                         </SwiperSlide>
                     </Swiper>
                 </div>
            </div>
 
-            <div class="moving-text-container">
-                <p class="moving-text">Digitalizamos tus sueños</p>
-                <p class="moving-text">Digitalizamos tus sueños</p>
-                <p class="moving-text">Digitalizamos tus sueños</p>
-                <p class="moving-text">Digitalizamos tus sueños</p>
-                <p class="moving-text">Digitalizamos tus sueños</p>
+            <div className="moving-text-container">
+                <p className="moving-text">Digitalizamos tus sueños</p>
+                <p className="moving-text">Digitalizamos tus sueños</p>
+                <p className="moving-text">Digitalizamos tus sueños</p>
+                <p className="moving-text">Digitalizamos tus sueños</p>
+                <p className="moving-text">Digitalizamos tus sueños</p>
             </div>
         </>  
     );

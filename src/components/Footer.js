@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 import {
     Row,
@@ -8,44 +9,41 @@ import {
 } from "reactstrap";
 
 function Footer() {
+    const navigate = useNavigate();
+
+    const handleClickContacto = () => {
+        // Utiliza history.push para navegar a la ruta deseada
+        window.scrollTo(0, 0);
+        navigate('/contactanos');
+    };
+
     return(
-        /*<div>
-            <footer className="page-footer text-center">
-                <div className="row align-items-center">
-                    <div className="col">
-                        <div className="footer-logo">
-                            <img src={process.env.PUBLIC_URL + '/images/logo-jak-white.png'} width="90" alt="JAK" />
-                        </div>
-                    </div>
-                    <div className="col-9">
-                        <p className="footer-text">©  2023 – JAK. Todos los derechos reservados.</p>
-                    </div>
-                    <div className="col">
-                        <p className="footer-text">hola@jak.mx</p>
-                    </div>
-                </div>
-            </footer>
-        </div>*/
-        <Row className="page-footer">
-            <Col xs="5">
+        <div className="row page-footer">
+            <div className="col-lg-5">
                 <h1 className="footer-text-frase">Reinventa tu negocio</h1>
-                <Button className="button" onClick={() => {}}>Contáctanos</Button>
-            </Col>
-            <Col xs="2">
-            </Col>
-            <Col xs="3">
+                <Button className="button" onClick={handleClickContacto}>Contáctanos</Button>
+            </div>
+            <div className="col-lg-2">
+            </div>
+            <div className="col-lg-3">
                 <p className="footer-text-options">Saber más</p>
                 <p className="footer-text-options">Nuestro blog</p>
                 <p className="footer-text-options">Portfolio</p>
                 <p className="footer-text-options">Política de privacidad</p>
-            </Col>
-            <Col xs="2">
+            </div>
+            <div className="col-lg-2">
                 <p className="footer-text-options">Escríbenos</p>
-                <p className="footer-text-options">contacto@jak.mx</p>
-                <img src={process.env.PUBLIC_URL + '/images/f-fb.png'} className = "zoom os-i" width="55" height="55" alt="..." />
-                <img src={process.env.PUBLIC_URL + '/images/f-ig.png'} className = "zoom os-i" width="55" height="55" alt="..." />
-            </Col>
-        </Row>
+                <a href="mailto:contacto@jak.mx">
+                    <p className="footer-text-options">contacto@jak.mx</p>
+                </a>
+                <a href="https://www.facebook.com/jaksoftwaremx">
+                    <img src={process.env.PUBLIC_URL + '/images/f-fb.png'} className = "os-i" width="55" height="55" alt="..." />
+                </a>
+                <a href="https://www.instagram.com/jaksoftwaremx/">
+                    <img src={process.env.PUBLIC_URL + '/images/f-ig.png'} className = "os-i" width="55" height="55" alt="..." />
+                </a>
+            </div>
+        </div>
     );
 }
 

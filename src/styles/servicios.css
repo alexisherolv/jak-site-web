@@ -1,184 +1,190 @@
-.servicios-1 {
-    padding-top: 100px;
-    background-color: #F6F5F5;
+.frase-principal-servicios{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px; /* Relleno interno del contenedor */
+    background-image: linear-gradient(to right, rgba(0, 169, 153, 0.9), rgba(0, 111, 184, 0.9));
+    padding-top: 130px;
+    padding-bottom: 130px;
+    border-radius: 20px; 
+    margin-top: 100px;
+}
+
+.fade-in-text {
+    opacity: 0; /* Inicia con una opacidad de 0 para ocultar el texto */
+    animation: fadeIn 4s ease forwards; /* Aplica la animación */
+}
+
+.frase-principal-servicios h1{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 75px;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+.frase-principal-servicios .subtitle{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    color: white;
+}
+
+.frase-principal-servicios .quien-es{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+    margin-top: 30px;
 }
 
 .servicios{
-    background-color: #F6F5F5;
+    width: 90% !important;
+    margin-top: 100px;
 }
 
-.services-card-title {
-    text-align: left !important;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 20px;
+.services-card .card-title{ 
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: #00a999;
 }
 
-.v-link{
-    padding-top: 10px;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 20px;
-    color: #1C932B !important;
+.services-card {
+    border: 1px solid #ffffff !important; 
 }
 
-.r-link{
-    padding-top: 10px;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 20px;
-    color: #D90607 !important;
+.services-card .card-text {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 400;
+    font-size: 16px;
 }
 
-.a-link{
-    padding-top: 10px;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 20px;
-    color: #020167 !important;
-}
-
-.a-link-last{
-    padding-top: 34px;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 20px;
-    color: #020167 !important;
-}
-
-.a-izquierda h4 {
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 20px;
-}
-
-.c-parrafo {
-    text-align: left;
-    font-family: 'Montserrat',serif;
-    font-size: medium !important;
-    color: #616161;
-}
-
-.our-services-parrafo2 {
-    padding-top: 30px;
-    text-align: center;
-    font-family: 'Montserrat',serif;
-    font-size: large;
-    color: #616161;
-}
-
-.c-dots{
-    text-align: left;
-    font-family: 'Montserrat',serif;
-    font-size: medium;
-    color: #616161;
-}
-
-.our-services-title2 {
-    text-align: center;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 50px;
-    padding-bottom: 40px;
-}
-
-.services-1{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background: -webkit-linear-gradient(left, #020167, #1c349c);
-}
-
-.services-1 h1{
-    text-align: center;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 25px;
-    color: white
-}
-
-
-.tecnologias-title {
+.how-to-make {
+    width: 90% !important;
     margin-top: 50px;
+    margin-bottom: 140px;
+}
+
+.how-to-make h1 {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.how-to-make li {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 16px;
     margin-bottom: 20px;
-    text-align: center !important;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 50px;
 }
 
-.tecnologias{
-    margin-bottom: 100px;
-}
-
-.s-contact {
-    border: 0;
-    margin-bottom: 100px !important;
-    background: -webkit-linear-gradient(left, #1C932B, #6BB646);
-}
-
-.s-contact-title {
-    margin-top: 10px;
-    text-align: left;
-    font-family: 'Montserrat',serif;
-    font-weight: 650;
-    font-size: 25px;
-    color: white
-}
-
-.s-contact-button {
-    display:block;
-    padding-top: 10px !important;
-    padding-left: 10px !important;
-    padding-bottom: 10px !important;
-    padding-right: 10px !important;
-    text-align: center !important;
-    font-family: 'Montserrat',serif !important;
-    font-weight: 500 !important;
-    font-size: 20px !important;
-    color: white !important;
-    border-radius: 5px;
-    border: 2px solid white;
-    background-color: transparent;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.s-contact-button {
-    transition-duration: 0.4s;
+ul.custom-list {
+    list-style: none; /* Oculta el marcador de lista predeterminado */
 }
   
-.s-contact-button:hover {
-    background-color: white; /* Green */
-    color: black !important;
-    border-color: white;
+ul.custom-list li:before {
+    content: "\2192"; /* Código Unicode para una flecha hacia la derecha */
+    margin-right: 0.5em; /* Espacio entre la flecha y el texto */
+    font-weight: bold; /* Grosor de la flecha (negrita) */
+    font-size: 1.2em; /* Tamaño de la flecha */
 }
 
-.c-row{
-    margin-top: 50px;
+.paquetes {
+    width: 80% !important;
+    margin-bottom: 180px;
+}
+
+.paquetes h1{ 
+    text-align: center;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    color: #006fb8;
+    margin-bottom: 30px;
+}
+
+.paquetes .subtitle{ 
+    text-align: center;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.paquetes .table .table-title {
+    font-family: 'Ubuntu',sans-serif;
+    text-align: center;
+    color: #00a999;
+    font-size: 20px;
+}
+
+.paquetes .table .table-title-2 {
+    font-family: 'Ubuntu',sans-serif;
+    font-size: 20px;
+}
+
+.paquetes .table .table-text{
+    font-family: 'Ubuntu',sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.paquetes .table .table-subtitle {
+    font-family: 'Ubuntu',sans-serif;
+    text-align: left;
+    color: #006fb8;
+    font-size: 20px;
+}
+  
+.why {
+    width: 80% !important;
+}
+
+.why h1 {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.why .subtitle {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.why .card .card-text {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.why .card .card-title {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: #006fb8;
+}
+
+.why .why-card{
+    border: 1px solid #00a999 !important; 
 }
 
 @media (max-width: 575px) {
-    .services-1 h1{
-        font-size: 20px;
-    }
-
-    .s-contact-button {
-        margin-top: 15px !important;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .tecnologias-title {
-        font-size: 30px;
-    }
-
-    .our-services-title2 {
-        font-size: 30px;
-    }
 }
 
 @media (max-width: 995px) {
-    .s-contact-button {
-        font-size: 15px !important;
-    }
+
 }

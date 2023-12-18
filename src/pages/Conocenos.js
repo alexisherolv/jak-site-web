@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 import {
     Button,
@@ -10,97 +11,102 @@ import {
 
 function Conocenos() {
 
+    const [scrollY, setScrollY] = useState(0);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const handleScroll = () => {
+          setScrollY(window.scrollY);
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const parallaxStyle = {
+        transform: `translateY(${scrollY * 0.5}px)`, // Ajusta el valor 0.5 según la velocidad deseada
+    };
+
+    const containerStyles = {
+        overflow: 'hidden', // Oculta cualquier contenido que se desborde
+    };
+
+    const handleClickContacto = () => {
+        // Utiliza history.push para navegar a la ruta deseada
+        window.scrollTo(0, 0);
+        navigate('/contactanos');
+    };
+
     return (
         <>
-            <section className="slide-contacto">
-                <div className = "slide-2">
-                    <img src={process.env.PUBLIC_URL + '/images/Banner.png'} className="img-fluid" alt="Responsive"/>
-                    <div className ="text-img-contacto">
-                        <h1>Personas reales trabajando por esfuerzos reales</h1>
+            <div className="frase-principal-conocenos fade-in-text" style={containerStyles}>
+                <div className="row">
+                    <div className="col-lg-7">
+                        <h1 style={parallaxStyle}>Personas <em className="animated">reales<svg className="nectar-scribble squiggle-underline" viewBox="-347 -30.1947 694 96.19" preserveAspectRatio="none"><path style={{ animationDuration: "1.8s" }} d="M-335,54 C-335,54 -171,-58 -194,-3 C-217,52 -224.1199951171875,73.552001953125 -127,11 C-68,-27 -137,50 -33,42 C31.43899917602539,37.042999267578125 147.14700317382812,-29.308000564575195 335,2" stroke="#ffce59" pathLength="1" strokeWidth="8" fill="none"></path></svg></em></h1>
+                        <p className="subtitle slide-up-text" style={parallaxStyle}>Trabajando por esfuerzos reales</p>
+                    </div>
+                    <div className="col-lg-4">
+                        <p className="quien-es slide-up-text" style={parallaxStyle}>JAK es una empresa mexicana fundada en mayo de 2020 con el propósito de proporcionar servicios destacados en desarrollo web y marketing, ofreciendo soluciones tecnológicas de vanguardia para mejorar la competitividad empresarial y agilizar procesos. En JAK promovemos una cultura de trabajo en equipo, enfocándonos en la alta calidad de servicio y la satisfacción completa de nuestros clientes.</p>
+                    </div>
+                    <div className="col-lg-1">
                     </div>
                 </div>
-            </section>
-
-            <div className="container quienes-somos">
-                <Row className="justify-content-center">
-                    <Col className="col-sm-12 col-md-9 ">
-                        <h1 className="quienes-somos-title">Sobre nosotros</h1>
-                        <p className="quienes-somos-parrafo">Garantía Total en Consultoría Tecnológica Avanzada, S.A. de C.V. es una empresa 100% mexicana creada en febrero de 2014 con el objetivo de dar un excelente servicio en “Consultoría en Tecnologías de Información” Ofreciendo las mejores soluciones tecnológicas para incrementar la competitividad en las empresas y con esto obtener el mayor provecho brindando las herramientas que agilicen sus procesos, mediante soportes sólidos, avanzados y viables en sus mercados. En GTC fomentamos una cultura de trabajo en equipo en donde el esfuerzo y dedicación de nuestros colaboradores se orienta a brindar servicios con la más alta calidad para asegurar la satisfacción total de nuestros clientes.</p>
-                    </Col>
-                </Row>
             </div>
 
-            <div className="su-fundacion">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm">
-                            <img src={process.env.PUBLIC_URL + '/images/somos2.png'} className="img-fluid rounded shadow" alt="..."/>
-                        </div>
-                        <div className="col-sm su-fundacion-derecha">
-                            <h1 className="su-fundacion-title">Su Fundación</h1>
-                            <p>La empresa es fundada con base en una profunda y amplia experiencia en el ERP JD Edwards, Dirección de Empresas, Definiciones de procesos y Sistemas empresariales en general. Los fundadores se enfocaron en las diversas metodologías de análisis de desarrollo para poder segmentar los retos que presentan las empresas y así poder ofrecer soluciones innovadoras, al paso de los años esta experiencia se visualiza con el excelente reconocimiento de los clientes que cuentan con este sistema en México, Centro América, Estados Unidos de América y Canadá, por lo que hemos tenido la oportunidad de participar en proyectos a nivel internacional; además de contar con una amplia experiencia en los sectores de la Iniciativa Privada y de Gobierno.</p>
-                            <div className="row su-fundacion-rfc">
-                                <div className="col-sm-12 col-md-2">
-                                    <img src={process.env.PUBLIC_URL + '/images/favicon.png'} className = "zoom os-i" width="70" height="70" alt="..." />
-                                </div>
-                                <div className="col-sm-12 col-md-10">
-                                    <p>Nuestra razón social es <strong>“Garantía Total en Consultoría Tecnológica Avanzada”</strong> pero nos comercializamos con las siglas que sobresalen en la misma que es <strong>“GTC”.</strong></p>
-                                </div>
+            <div className="container su-fundacion">
+                <div className="row">
+                    <div className="col">
+                        <img src={process.env.PUBLIC_URL + '/images/conocenos.png'} className="img-fluid" alt="..."/>
+                    </div>
+                    <div className="col-lg-6 su-fundacion-derecha">
+                        <h1 className="su-fundacion-title">¿Qué nos define?</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <div className="row su-fundacion-rfc">
+                            <div className="col">
+                                <img src={process.env.PUBLIC_URL + '/images/jak-favicon.png'} className = "zoom os-i" width="70" height="70" alt="..." />
+                            </div>
+                            <div className="col-lg-10">
+                                <p>La filosofía de JAK es <strong>“Trabajar con pasión”</strong> porque creemos que la  <strong>dedicación y el entusiasmo </strong>son la fuerza impulsora detrás de la excelencia y la innovación en cada proyecto que emprendemos.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="container">
+            <div className="call-to-action-2">
                 <div className="row">
-                    <div className="col-sm">
-                        <Card className="mision shadow p-3 mb-5 bg-white rounded">
+                    <div className="col-lg-7 text">
+                        <h1 className="title">Nuestro objetivo</h1>
+                        <h2 className="subtitle">Satisfacer las necesidades únicas de nuestros clientes, brindando soluciones tecnológicas innovadoras y contribuyendo a su éxito en línea.</h2>
+                        <Button className="button" onClick={handleClickContacto}>Contáctanos</Button>
+                    </div>
+                    <div className="col-lg-5 text-center">
+                        <img src={process.env.PUBLIC_URL + '/images/conocenos-2.png'} width="500" alt="..." />
+                    </div>
+                </div>
+            </div>
+
+            <div className="container">
+                <div className="row mision-vision">
+                    <div className="col-lg-6">
+                        <div className="card mision shadow p-3 mb-5 rounded">
                             <CardBody>
                                 <h1 className="mision-vision-title">Misión JAK</h1>
-                                <p className="mision-vision-parrafo">Generar soluciones profesionales de software y marketing que cubran las expectativas y generen un alto valor para nuestros clientes.</p>
+                                <p className="mision-vision-parrafo">Ofrecer soluciones de software y marketing de alta calidad que superen las expectativas de nuestros clientes y generen un valor excepcional.</p>
                             </CardBody>
-                        </Card>
+                        </div>
                     </div>
-                    <div className="col-sm">
-                        <Card className="vision shadow p-3 mb-5 bg-white rounded">
+                    <div className="col-lg-6">
+                        <div className="card vision shadow p-3 mb-5 rounded">
                             <CardBody>
                                 <h1 className="mision-vision-title">Visión JAK</h1>
-                                <p className="mision-vision-parrafo">Ser una empresa líder en el mercado de desarrollo de software y soliciones de marketing capitalizando ideas de cada uno de nuestros clientes con un alto grado de calidad.</p>
+                                <p className="mision-vision-parrafo">Ser líderes en el mercado de desarrollo de software y marketing, aprovechando las ideas de nuestros clientes para ofrecer soluciones de la más alta calidad.</p>
                             </CardBody>
-                        </Card>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div className="container valores">
-                <Row className="justify-content-center">
-                    <Col className="col-sm-12 col-md-9 ">
-                        <h1 className="valores-title">Nuestros Valores</h1>
-                    </Col>
-                </Row>
-                <div className="row">
-                    <div className="col-sm v-izquierda">
-                        <h2><strong className="v-1">1. </strong>Responsabilidad y Honestidad</h2>
-                        <p>Responsabilidad de ejecución en cada uno de los procesos de entrega tanto para los clientes como de forma interna, Honestidad con lo que se piensa, se siente, se dice y se hace para apreciar el compromiso, puntualidad, disciplina y cumplimiento en las labores asignadas.</p>
-                        <h2><strong className="v-2">2. </strong>Humildad y Gratitud</h2>
-                        <p>Dos valores muy importantes y necesarios en una empresa, la humildad en el ser humano para reconocer sus limitantes y actuar en el conocimiento de la superación, gratitud por lo que se tiene y no se tiene repercute en nuestro día a día</p>
-                        <h2><strong className="v-3">3. </strong>Excelencia y Eficiencia.</h2>
-                        <p>Excelencia es la búsqueda de diferentes metas que conduzcan a la máxima eficacia para obtener los mejores resultados, llegando a los más altos estándares de calidad, eficiencia es el reto que se puede presentar y que sirve para medir la capacidad de resolver y realizar un proceso con el mínimo de recursos posibles.</p>
-                    </div>
-                    <div className="col-sm">
-                        <img src={process.env.PUBLIC_URL + '/images/somos3.png'} className="img-fluid rounded shadow" alt="..."/>
-                    </div>
-                </div>
-            </div>
-
-            <div className="brochure">
-                <div className="container">
-                    <Row className="justify-content-center">
-                        <Col className="col-sm-12 col-md-9 ">
-                            <h1>Ver <a href="http://129.159.99.152/WEB/Files/BrochureGTC.pdf" target="_blank">Brochure GTC</a> en PDF para imprimir</h1>
-                        </Col>
-                    </Row>
                 </div>
             </div>
         </>  
