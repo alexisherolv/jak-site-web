@@ -131,10 +131,10 @@ function Contactanos() {
             }
             
             send(
-                'service_nic4q4r',
-                'template_38tyx6d',
+                'service_cwsaebi',
+                'template_089yjwa',
                 toSend,
-                'aB31PMz2MH23GsjTe'
+                '8VBPwBT6f_vOBKuzv'
             )
             .then((response) => {
                 setMessageEnvioCorrect("Envío realizado con éxito");
@@ -146,6 +146,7 @@ function Contactanos() {
                 , 5000);
             })
             .catch((err) => {
+                console.log(err)
                 setMessageEnvioError("Error de envío: " + err);
                 resetFileInput();
                 setTimeout(
