@@ -225,14 +225,14 @@ function Home() {
                             <div className="col-lg-6">
                                 <img src={process.env.PUBLIC_URL + '/images/firma.png'} className = "zoom os-i" width="110" height="110" alt="..." />
                             </div>
-                            <h1 className="item-title">3. Firma de contrato:</h1>
+                            <h1 className="item-title">3. Firma de contrato</h1>
                             <p className="item-description">Formalizamos el compromiso mediante la firma de un contrato detallado que establece términos, entregables y condiciones. Esta etapa marca el inicio oficial de la colaboración.</p>
                         </div>
                         <div className="row">
                             <div className="col-lg-6">
                                 <img src={process.env.PUBLIC_URL + '/images/creacion.png'} className = "zoom os-i" width="110" height="110" alt="..." />
                             </div>
-                            <h1 className="item-title">4. Trabajamos en tu producto:</h1>
+                            <h1 className="item-title">4. Trabajamos en tu producto</h1>
                             <p className="item-description">Iniciamos el desarrollo del producto digitalizado, manteniendo comunicación constante y proporcionando actualizaciones periódicas. Buscamos la retroalimentación continua para ajustar el producto según las expectativas del cliente.</p>
                         </div>
                     </div>
@@ -244,7 +244,7 @@ function Home() {
                         <img src={process.env.PUBLIC_URL + '/images/entrega.png'} className = "zoom os-i" width="110" height="110" alt="..." />
                     </div>
                     <div className="col-lg-6">
-                        <h1 className="item-title">5. Entregamos tu sueño digital en un producto tangible:</h1>
+                        <h1 className="item-title">5. Entregamos tu sueño digital en un producto tangible</h1>
                         <p className="item-description">Después de pruebas y refinamientos, entregamos el producto finalizado. Proporcionamos documentación completa y soporte para la implementación, marcando la culminación del proceso y convirtiendo el sueño del cliente en realidad funcional.</p>
                     </div>
                     <div className="col-lg-2">
