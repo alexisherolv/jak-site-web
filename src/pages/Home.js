@@ -90,10 +90,10 @@ function Home() {
                         <h1 className="title">Servicios de programación web</h1>
                         <div className="separador"></div>
                         <h1 className="subtitle">Expertos en desarrollo web</h1>
-                        <p className="parrafo">Nuestro equipo está formado por profesionales diversos con amplia experiencia en desarrollo web y diseño web, adaptándonos tanto a las necesidades de grandes corporaciones como de pequeñas empresas. Aplicamos nuestro talento en el ámbito digital de manera estratégica, teniendo en cuenta sus metas y presupuesto, para ofrecerle una propuesta de valor que impulsará el crecimiento de su negocio. Ya sea que desee crear un sitio web desde cero o mejorar y promocionar su sitio web existente (¡o ambas cosas!), estamos aquí para asistirle en cada paso del camino.</p>
+                        <p className="parrafo">Nuestro equipo está formado por profesionales diversos con amplia experiencia en desarrollo web y diseño web, adaptándonos tanto a las necesidades de grandes corporaciones como de pequeñas empresas. Aplicamos nuestro talento en el ámbito digital de manera estratégica, teniendo en cuenta sus metas y presupuesto, para ofrecerle una propuesta de valor que impulsará el crecimiento de su negocio. Ya sea que desee crear un sitio web desde cero o mejorar o promocionar su sitio web existente, estamos aquí para asistirle en cada paso del camino.</p>
                         <Button className="button" onClick={handleClickContacto}>Más información</Button>
                     </div>
-                    <div className="col-lg-7">
+                    <div className="col-lg-7 items-desarrollo-web">
                         <Card className="card">
                             <div className="row card-item item-0">
                                 <div className="col-lg-2">
@@ -140,7 +140,7 @@ function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col item-4">
+                                {/*<div className="col item-4">
                                     <div className="row">
                                         <div className="col-lg-3">
                                             <img src={process.env.PUBLIC_URL + '/images/4.png'} className = "zoom os-i" width="80" height="80" alt="..." />
@@ -150,9 +150,20 @@ function Home() {
                                             <p className="card-text">Nuestro equipo trabaja en estrecha colaboración contigo para crear interfaces atractivas, intuitivas y centradas en el usuario.</p>
                                         </div>
                                     </div>
+                                </div>*/}
+                                <div className="col item-5">
+                                    <div className="row">
+                                        <div className="col-lg-3">
+                                            <img src={process.env.PUBLIC_URL + '/images/5.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                        </div>
+                                        <div className="col">
+                                            <p className="card-title">Posicionamiento SEO</p>
+                                            <p className="card-text">Amplia experiencia en el posicionamiento orgánico de  plataformas webs, sin penalizaciones. Posicionando webs de diferentes sectores.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="row card-item">
+                            {/*<div className="row card-item">
                                 <div className="col item-5">
                                     <div className="row">
                                         <div className="col-lg-3">
@@ -175,7 +186,7 @@ function Home() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>*/}
                         </Card>
                     </div>
                     <div className="col-lg-1">
@@ -189,17 +200,17 @@ function Home() {
                     <div className="col-lg-3">
                         <div className="row">
                             <div className="col-lg-6">
-                                <img src={process.env.PUBLIC_URL + '/images/6.png'} className = "zoom os-i" width="110" height="110" alt="..." />
+                                <img src={process.env.PUBLIC_URL + '/images/idea.png'} className = "zoom os-i" width="110" height="110" alt="..." />
                             </div>
-                            <h1 className="item-title">Arquitectura del software</h1>
-                            <p className="item-description">Ofrecemos a nuestros clientes un marco de trabajo transparente mediante un documento funcional que detalla el alcance, tecnologías y comportamiento de la aplicación final. </p>
+                            <h1 className="item-title">1. Cliente comparte el sueño a digitalizar</h1>
+                            <p className="item-description">El cliente comparte sus metas y aspiraciones, estableciendo una conexión cercana. Fomentamos un entorno colaborativo para expresar libremente ideas y expectativas.</p>
                         </div>
                         <div className="row">
                             <div className="col-lg-6">
-                                <img src={process.env.PUBLIC_URL + '/images/6.png'} className = "zoom os-i" width="110" height="110" alt="..." />
+                                <img src={process.env.PUBLIC_URL + '/images/estimacion.png'} className = "zoom os-i" width="110" height="110" alt="..." />
                             </div>
-                            <h1 className="item-title">Arquitectura del software</h1>
-                            <p className="item-description">Ofrecemos a nuestros clientes un marco de trabajo transparente mediante un documento funcional que detalla el alcance, tecnologías y comportamiento de la aplicación final. </p>
+                            <h1 className="item-title">2. Compartimos estimaciones de costos y tiempos</h1>
+                            <p className="item-description">Presentamos al cliente estimaciones detalladas de costos y tiempos, proporcionando transparencia en recursos y duración del proyecto. Buscamos la alineación y abordamos preguntas para establecer expectativas realistas.</p>
                         </div>
                     </div>
                     <div className={`col-lg-6 container-2 ${isVisible ? 'visible' : ''}`}>
@@ -212,18 +223,31 @@ function Home() {
                     <div className="col-lg-3">
                         <div className="row">
                             <div className="col-lg-6">
-                                <img src={process.env.PUBLIC_URL + '/images/6.png'} className = "zoom os-i" width="110" height="110" alt="..." />
+                                <img src={process.env.PUBLIC_URL + '/images/firma.png'} className = "zoom os-i" width="110" height="110" alt="..." />
                             </div>
-                            <h1 className="item-title">Arquitectura del software</h1>
-                            <p className="item-description">Ofrecemos a nuestros clientes un marco de trabajo transparente mediante un documento funcional que detalla el alcance, tecnologías y comportamiento de la aplicación final. </p>
+                            <h1 className="item-title">3. Firma de contrato:</h1>
+                            <p className="item-description">Formalizamos el compromiso mediante la firma de un contrato detallado que establece términos, entregables y condiciones. Esta etapa marca el inicio oficial de la colaboración.</p>
                         </div>
                         <div className="row">
                             <div className="col-lg-6">
-                                <img src={process.env.PUBLIC_URL + '/images/6.png'} className = "zoom os-i" width="110" height="110" alt="..." />
+                                <img src={process.env.PUBLIC_URL + '/images/creacion.png'} className = "zoom os-i" width="110" height="110" alt="..." />
                             </div>
-                            <h1 className="item-title">Arquitectura del software</h1>
-                            <p className="item-description">Ofrecemos a nuestros clientes un marco de trabajo transparente mediante un documento funcional que detalla el alcance, tecnologías y comportamiento de la aplicación final. </p>
+                            <h1 className="item-title">4. Trabajamos en tu producto:</h1>
+                            <p className="item-description">Iniciamos el desarrollo del producto digitalizado, manteniendo comunicación constante y proporcionando actualizaciones periódicas. Buscamos la retroalimentación continua para ajustar el producto según las expectativas del cliente.</p>
                         </div>
+                    </div>
+                </div>
+                <div className="row dot-6">
+                    <div className="col-lg-2">
+                    </div>
+                    <div className="col-lg-2">
+                        <img src={process.env.PUBLIC_URL + '/images/entrega.png'} className = "zoom os-i" width="110" height="110" alt="..." />
+                    </div>
+                    <div className="col-lg-6">
+                        <h1 className="item-title">5. Entregamos tu sueño digital en un producto tangible:</h1>
+                        <p className="item-description">Después de pruebas y refinamientos, entregamos el producto finalizado. Proporcionamos documentación completa y soporte para la implementación, marcando la culminación del proceso y convirtiendo el sueño del cliente en realidad funcional.</p>
+                    </div>
+                    <div className="col-lg-2">
                     </div>
                 </div>
             </div>
@@ -297,7 +321,7 @@ function Home() {
                         <Button className="button" onClick={handleClickContacto}>Contáctanos</Button>
                     </div>
                     <div className="col-lg-5 text-center">
-                        <img src={process.env.PUBLIC_URL + '/images/desarrollo-web.png'} width="500" alt="..." />
+                        <img className="img-desarrollo-web" src={process.env.PUBLIC_URL + '/images/desarrollo-web.png'} width="500" alt="..." />
                     </div>
                 </div>
             </div>
@@ -307,23 +331,23 @@ function Home() {
                 <div className="row cards-testimonials">
                     <div className="col-lg-4">
                         <Card className="card">
-                            <p className="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <h1 className="card-title">Victor Vera</h1>
-                            <h4 className="description">CEO y Fundador de Solutions Systems</h4>
+                            <p className="comment">Trabajar con JAK ha sido una experiencia excepcional. Su enfoque personalizado y su atención a los detalles realmente destacaron en la creación de nuestro sitio web. Desde el diseño hasta la implementación, su equipo demostró un nivel excepcional de profesionalismo y habilidad técnica. Estamos extremadamente satisfechos con el resultado final y continuamos recibiendo elogios de nuestros clientes por la funcionalidad y estética de nuestro nuevo sitio. ¡Definitivamente recomendamos los servicios de JAK para soluciones web de alta calidad!</p>
+                            <h1 className="card-title">Rebeca Sutton</h1>
+                            <h4 className="description">CEO y Fundadora de Cardio & Sculpt</h4>
                         </Card>
                     </div>
                     <div className="col-lg-4">
                         <Card className="card">
-                            <p className="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <h1 className="card-title">Victor Vera</h1>
-                            <h4 className="description">CEO y Fundador de Solutions Systems</h4>
+                            <p className="comment">JAK no solo cumplió, sino superó nuestras expectativas. Su capacidad para comprender nuestras necesidades únicas y traducirlas en soluciones tecnológicas innovadoras fue impresionante. Desde el desarrollo de nuestro sitio de comercio electrónico hasta la implementación de estrategias efectivas de marketing digital, su equipo demostró un compromiso excepcional. La atención al cliente durante todo el proceso fue sobresaliente, y el resultado final habla por sí mismo. Estamos encantados de haber elegido a JAK para impulsar nuestro negocio.</p>
+                            <h1 className="card-title">Juan Rodríguez</h1>
+                            <h4 className="description">Director Comercial de Couvrant MX</h4>
                         </Card>
                     </div>
                     <div className="col-lg-4">
                         <Card className="card">
-                            <p className="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <h1 className="card-title">Victor Vera</h1>
-                            <h4 className="description">CEO y Fundador de Solutions Systems</h4>
+                            <p className="comment">La elección de JAK para el desarrollo de nuestro sitio web fue acertada desde el principio. Su equipo no solo posee un conjunto impresionante de habilidades técnicas, sino que también se distinguen por su enfoque centrado en el cliente. Nos guiaron a través de cada fase del proyecto, brindándonos información detallada y opciones flexibles. La comunicación abierta y transparente nos dio confianza en cada paso. El resultado final fue exactamente lo que necesitábamos: un sitio web funcional, atractivo y adaptado a nuestras necesidades específicas. ¡Fue una experiencia excepcional!</p>
+                            <h1 className="card-title">Sofia Díaz</h1>
+                            <h4 className="description">CEO y Fundadora de Sofia Diaz Producciones</h4>
                         </Card>
                     </div>
                 </div>

@@ -63,7 +63,7 @@ function Conocenos() {
                     </div>
                     <div className="col-lg-6 su-fundacion-derecha">
                         <h1 className="su-fundacion-title">¿Qué nos define?</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>En JAK nos define nuestra dedicación apasionada a la excelencia, nuestra cultura de trabajo en equipo, y nuestra constante búsqueda de ofrecer soluciones de vanguardia que marquen la pauta en el desarrollo web y el marketing. Estamos comprometidos a ir más allá de lo convencional, liderando el camino hacia un panorama digital innovador y exitoso.</p>
                         <div className="row su-fundacion-rfc">
                             <div className="col">
                                 <img src={process.env.PUBLIC_URL + '/images/jak-favicon.png'} className = "zoom os-i" width="70" height="70" alt="..." />
@@ -84,7 +84,7 @@ function Conocenos() {
                         <Button className="button" onClick={handleClickContacto}>Contáctanos</Button>
                     </div>
                     <div className="col-lg-5 text-center">
-                        <img src={process.env.PUBLIC_URL + '/images/conocenos-2.png'} width="500" alt="..." />
+                        <img className="img-desarrollo-web" src={process.env.PUBLIC_URL + '/images/conocenos-2.png'} width="500" alt="..." />
                     </div>
                 </div>
             </div>

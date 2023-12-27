@@ -84,12 +84,12 @@ function Navbar() {
                     </ul>  
                     <div className="row actions2" >
                         <div className="col iconos">
-                            <a href="" target="_blank">
+                            <a href="https://www.facebook.com/jaksoftwaremx" target="_blank">
                                 <img src={process.env.PUBLIC_URL + '/images/facebook.png'} className = "zoom" width="30" height="30" alt="..." />
                             </a>
                         </div>
                         <div className="col iconos">
-                            <a href="" target="_blank">
+                            <a href="https://www.instagram.com/jaksoftwaremx/" target="_blank">
                                 <img src={process.env.PUBLIC_URL + '/images/instagram.png'} className = "zoom" width="30" height="30" alt="..." />
                             </a>
                         </div>

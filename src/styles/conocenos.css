@@ -183,6 +183,8 @@
     .su-fundacion-derecha{
         margin-left: 0px;
         margin-right: 0px;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
     }
 
     .v-izquierda{
@@ -196,5 +198,10 @@
     
     .valores p{
         font-size: medium;
+    }
+
+    .mision-vision {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
     }
 }

@@ -147,6 +147,7 @@ ul.custom-list li:before {
   
 .why {
     width: 80% !important;
+    margin-bottom: 90px;
 }
 
 .why h1 {

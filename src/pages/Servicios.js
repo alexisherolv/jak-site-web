@@ -56,7 +56,7 @@ function Servicios() {
                     <div className="col-lg-1"></div>
                     <div className="col-lg-10">
                         <h1 style={parallaxStyle}>Nuestros <em className="animated">servicios<svg className="nectar-scribble squiggle-underline" viewBox="-347 -30.1947 694 96.19" preserveAspectRatio="none"><path style={{ animationDuration: "1.8s" }} d="M-335,54 C-335,54 -171,-58 -194,-3 C-217,52 -224.1199951171875,73.552001953125 -127,11 C-68,-27 -137,50 -33,42 C31.43899917602539,37.042999267578125 147.14700317382812,-29.308000564575195 335,2" stroke="#ffce59" pathLength="1" strokeWidth="8" fill="none"></path></svg></em></h1>
-                        <p className="quien-es slide-up-text" style={parallaxStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p className="quien-es slide-up-text" style={parallaxStyle}>Nuestros servicios integrales abarcan todas las facetas esenciales para impulsar la presencia en línea y el éxito comercial. Nos especializamos en una amplia gama de servicios que garantizan soluciones completas y personalizadas para cada necesidad. Estamos comprometidos a ser tu aliado estratégico en el viaje hacia el éxito digital.</p>
                     </div>
                     <div className="col-lg-1"></div>
                 </div>
@@ -118,7 +118,7 @@ function Servicios() {
                             </div>
                         </Card>
                     </div>  
-                    <div className="col-lg-4">
+                    {/*<div className="col-lg-4">
                         <Card className="services-card shadow p-3 mb-5 bg-white rounded">
                             <div className="row">
                                 <div className="col-lg-3">
@@ -130,31 +130,16 @@ function Servicios() {
                                 </div>
                             </div>
                         </Card>
-                    </div>
+                    </div>*/}
                     <div className="col-lg-4">
                         <Card className="services-card shadow p-3 mb-5 bg-white rounded">
                             <div className="row">
                                 <div className="col-lg-3">
-                                    <img src={process.env.PUBLIC_URL + '/images/5.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                    <img src={process.env.PUBLIC_URL + '/images/9.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                 </div>
                                 <div className="col-lg-9">
-                                    <p className="card-title">Posicionamiento SEO</p>
-                                    <p className="card-text">Amplia experiencia en el posicionamiento orgánico de plataformas webs, sin penalizaciones. Posicionando webs de diferentes sectores.</p>
-                                </div>
-                            </div>
-                        </Card>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-lg-4">
-                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
-                            <div className="row">
-                                <div className="col-lg-3">
-                                    <img src={process.env.PUBLIC_URL + '/images/6.png'} className = "zoom os-i" width="80" height="80" alt="..." />
-                                </div>
-                                <div className="col-lg-9">
-                                    <p className="card-title">Ciberseguridad</p>
-                                    <p className="card-text">Implementación de políticas, controles y sistemas de seguridad tanto para entornos Web, como corporativos. Apoyados en importantes partners del sector.</p>
+                                    <p className="card-title">Redes sociales</p>
+                                    <p className="card-text">Nuestro equipo se encarga de construir y mantener una sólida presencia en las redes sociales para tu marca, conectándote de manera efectiva con tu audiencia y maximizando tu impacto.</p>
                                 </div>
                             </div>
                         </Card>
@@ -172,21 +157,21 @@ function Servicios() {
                             </div>
                         </Card>
                     </div>
-                    <div className="col-lg-4">
+                </div>
+                <div className="row">
+                    {/*<div className="col-lg-4">
                         <Card className="services-card shadow p-3 mb-5 bg-white rounded">
                             <div className="row">
                                 <div className="col-lg-3">
-                                    <img src={process.env.PUBLIC_URL + '/images/9.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                    <img src={process.env.PUBLIC_URL + '/images/6.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                 </div>
                                 <div className="col-lg-9">
-                                    <p className="card-title">Redes sociales</p>
-                                    <p className="card-text">Nuestro equipo se encarga de construir y mantener una sólida presencia en las redes sociales para tu marca, conectándote de manera efectiva con tu audiencia y maximizando tu impacto.</p>
+                                    <p className="card-title">Ciberseguridad</p>
+                                    <p className="card-text">Implementación de políticas, controles y sistemas de seguridad tanto para entornos Web, como corporativos. Apoyados en importantes partners del sector.</p>
                                 </div>
                             </div>
                         </Card>
-                    </div>
-                </div>
-                <div className="row">
+                    </div>*/}
                     <div className="col-lg-4">
                         <Card className="services-card shadow p-3 mb-5 bg-white rounded">
                             <div className="row">
@@ -204,6 +189,19 @@ function Servicios() {
                         <Card className="services-card shadow p-3 mb-5 bg-white rounded">
                             <div className="row">
                                 <div className="col-lg-3">
+                                    <img src={process.env.PUBLIC_URL + '/images/5.png'} className = "zoom os-i" width="80" height="80" alt="..." />
+                                </div>
+                                <div className="col-lg-9">
+                                    <p className="card-title">Posicionamiento SEO</p>
+                                    <p className="card-text">Amplia experiencia en el posicionamiento orgánico de plataformas webs, sin penalizaciones. Posicionando webs de diferentes sectores.</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                    <div className="col-lg-4">
+                        <Card className="services-card shadow p-3 mb-5 bg-white rounded">
+                            <div className="row">
+                                <div className="col-lg-3">
                                     <img src={process.env.PUBLIC_URL + '/images/12.png'} className = "zoom os-i" width="80" height="80" alt="..." />
                                 </div>
                                 <div className="col-lg-9">
@@ -213,6 +211,10 @@ function Servicios() {
                             </div>
                         </Card>
                     </div>
+                </div>
+                <div className="row">
+                    
+                    
                     <div className="col-lg-4">
                     </div>
                 </div>
@@ -223,11 +225,11 @@ function Servicios() {
                     <div className="col-lg-6">
                         <h1>¿Cómo lo hacemos?</h1>
                         <ul className="custom-list">
-                            <li><strong>Entendimiento:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                            <li><strong>Planeación:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                            <li><strong>Implementación:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                            <li><strong>Retrospectiva:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                            <li><strong>Soporte:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                            <li><strong>Cliente comparte el sueño a digitalizar: </strong>El cliente comparte sus metas y aspiraciones, estableciendo una conexión cercana. Fomentamos un entorno colaborativo para expresar libremente ideas y expectativas.</li>
+                            <li><strong>Compartimos estimaciones de costos y tiempos: </strong>Presentamos al cliente estimaciones detalladas de costos y tiempos, proporcionando transparencia en recursos y duración del proyecto. Buscamos la alineación y abordamos preguntas para establecer expectativas realistas.</li>
+                            <li><strong>Firma de contrato: </strong>Formalizamos el compromiso mediante la firma de un contrato detallado que establece términos, entregables y condiciones. Esta etapa marca el inicio oficial de la colaboración.</li>
+                            <li><strong>Trabajamos en tu producto: </strong>Iniciamos el desarrollo del producto digitalizado, manteniendo comunicación constante y proporcionando actualizaciones periódicas. Buscamos la retroalimentación continua para ajustar el producto según las expectativas del cliente.</li>
+                            <li><strong>Entregamos tu sueño digital en un producto tangible: </strong>Después de pruebas y refinamientos, entregamos el producto finalizado. Proporcionamos documentación completa y soporte para la implementación, marcando la culminación del proceso y convirtiendo el sueño del cliente en realidad funcional.</li>
                         </ul>
                     </div>
                     <div className="col-lg-6 d-flex align-items-center justify-content-center">
@@ -248,7 +250,7 @@ function Servicios() {
                                 </div>
                                 <div className="col-lg-9">
                                     <p className="card-title">Pronta Personalización</p>
-                                    <p className="card-text">Nuestros desarrolladores web experimentados proporcionan soluciones web de personalización sobre la marcha, ahorramos tiempo y entregamos un producto de calidad.</p>
+                                    <p className="card-text">Ofrecemos adaptación rápida a las necesidades del cliente, garantizando una solución completamente personalizada. Nuestro enfoque ágil permite ajustes eficientes para satisfacer las evoluciones del proyecto de manera oportuna.</p>
                                 </div>
                             </div>
                         </Card>
@@ -261,7 +263,7 @@ function Servicios() {
                                 </div>
                                 <div className="col-lg-9">
                                     <p className="card-title">Equipo Calificado</p>
-                                    <p className="card-text">Nuestros desarrolladores web experimentados proporcionan soluciones web de personalización sobre la marcha, ahorramos tiempo y entregamos un producto de calidad.</p>
+                                    <p className="card-text">Contamos con un equipo altamente calificado y actualizado en las últimas tendencias de desarrollo web. La experiencia y competencia de nuestro equipo aseguran estándares de calidad superiores en cada proyecto.</p>
                                 </div>
                             </div>
                         </Card>
@@ -276,7 +278,7 @@ function Servicios() {
                                 </div>
                                 <div className="col-lg-9">
                                     <p className="card-title">Solución Asequible</p>
-                                    <p className="card-text">Nuestros desarrolladores web experimentados proporcionan soluciones web de personalización sobre la marcha, ahorramos tiempo y entregamos un producto de calidad.</p>
+                                    <p className="card-text">Comprometidos con la accesibilidad, proporcionamos soluciones de desarrollo web rentables sin sacrificar calidad. Nuestra transparencia en costos y estimaciones garantiza una relación costo-beneficio favorable para nuestros clientes.</p>
                                 </div>
                             </div>
                         </Card>
@@ -289,7 +291,7 @@ function Servicios() {
                                 </div>
                                 <div className="col-lg-9">
                                     <p className="card-title">Diseño Perfecto</p>
-                                    <p className="card-text">Nuestros desarrolladores web experimentados proporcionan soluciones web de personalización sobre la marcha, ahorramos tiempo y entregamos un producto de calidad.</p>
+                                    <p className="card-text">Nuestro enfoque en el diseño se centra en la estética, funcionalidad y experiencia del usuario. Creamos diseños visualmente atractivos e intuitivos, priorizando la usabilidad para garantizar que cada proyecto sea estéticamente agradable y fácil de navegar.</p>
                                 </div>
                             </div>
                         </Card>
