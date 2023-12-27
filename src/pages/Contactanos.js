@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -34,6 +34,42 @@ function Contactanos() {
 
     const [scrollY, setScrollY] = useState(0);
     const navigate = useNavigate();
+
+    const [isVisible, setIsVisible] = useState(false);
+    const imageRef = useRef(null);
+
+    const handleScroll = () => {
+        if (imageRef.current) {
+        const rect = imageRef.current.getBoundingClientRect();
+        const shouldBeVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+        if (shouldBeVisible) {
+            setIsVisible(true);
+            window.removeEventListener('scroll', handleScroll);
+        }
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        return () => {
+        window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+          setScrollY(window.scrollY);
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     // function that verifies if a string has a given length or not
     const verifyLength = (value, length) => {
@@ -137,7 +173,7 @@ function Contactanos() {
         overflow: 'hidden', // Oculta cualquier contenido que se desborde
     };
 
-    useEffect(() => {
+    /*useEffect(() => {
         const handleScroll = () => {
           setScrollY(window.scrollY);
         };
@@ -147,7 +183,7 @@ function Contactanos() {
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, []);*/
 
     const handleClickContacto = () => {
         // Utiliza history.push para navegar a la ruta deseada
