@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const navigate = useNavigate();
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const handleToggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     const handleScroll=() => {
         const offset=window.scrollY;
@@ -27,24 +32,28 @@ function Navbar() {
 
     const handleClickInicio = () => {
         // Utiliza history.push para navegar a la ruta deseada
+        setIsMenuOpen(false);
         window.scrollTo(0, 0);
         navigate('/');
     };
 
     const handleClickConocenos = () => {
         // Utiliza history.push para navegar a la ruta deseada
+        setIsMenuOpen(false);
         window.scrollTo(0, 0);
         navigate('/conocenos');
     };
 
     const handleClickServicios = () => {
         // Utiliza history.push para navegar a la ruta deseada
+        setIsMenuOpen(false);
         window.scrollTo(0, 0);
         navigate('/servicios');
     };
 
     const handleClickContacto = () => {
         // Utiliza history.push para navegar a la ruta deseada
+        setIsMenuOpen(false);
         window.scrollTo(0, 0);
         navigate('/contactanos');
     };
@@ -55,11 +64,11 @@ function Navbar() {
                 <div className="navbar-brand logo" onClick={handleClickInicio}>
                     <img src={process.env.PUBLIC_URL + '/images/logo-jak.png'} width="90" alt="JAK" />
                 </div>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={handleToggleMenu}>
                     <span className="navbar-toggler-icon"></span>
                 </button>
             
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarSupportedContent">
                     <ul className="navbar-nav mx-auto ">
                         <li className="nav-item">
                             <div className="nav-link" onClick={handleClickInicio}>
