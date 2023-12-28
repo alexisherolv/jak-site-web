@@ -340,7 +340,7 @@ function Home() {
                         <Card className="card">
                             <p className="comment">JAK no solo cumplió, sino superó nuestras expectativas. Su capacidad para comprender nuestras necesidades únicas y traducirlas en soluciones tecnológicas innovadoras fue impresionante. Desde el desarrollo de nuestro sitio de comercio electrónico hasta la implementación de estrategias efectivas de marketing digital, su equipo demostró un compromiso excepcional. La atención al cliente durante todo el proceso fue sobresaliente, y el resultado final habla por sí mismo. Estamos encantados de haber elegido a JAK para impulsar nuestro negocio.</p>
                             <h1 className="card-title">Juan Rodríguez</h1>
-                            <h4 className="description">Director Comercial de Couvrant MX</h4>
+                            <h4 className="description">Director Comercial de ITG MX</h4>
                         </Card>
                     </div>
                     <div className="col-lg-4">
